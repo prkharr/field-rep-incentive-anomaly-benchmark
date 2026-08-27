@@ -1,0 +1,10 @@
+{
+  "metric": "Euclidean L2 distance in fitted preprocessed feature space",
+  "formula": "sqrt(sum((x_j - assigned_centroid_j)^2))",
+  "observations_checked": 4161,
+  "assigned_centroid_is_nearest_for_all_rows": true,
+  "max_abs_error_vs_manual_formula": 0.0,
+  "max_abs_error_vs_sklearn_transform": 2.469136006766348e-13,
+  "abs_error_sum_squared_distance_vs_inertia": 5.820766091346741e-11,
+  "max_abs_feature_contribution_sum_error": 4.440892098500626e-16
+}

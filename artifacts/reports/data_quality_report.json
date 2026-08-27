@@ -1,0 +1,198 @@
+{
+  "source": {
+    "source_type": "fallback_synthetic",
+    "source_path": "data/synthetic/fallback_pharma_sales.csv",
+    "fallback_used": true,
+    "fallback_reason": "No qualifying pharma CSV was found in configured workspace search roots."
+  },
+  "shape": {
+    "rows": 9000,
+    "columns": 18
+  },
+  "exact_duplicate_rows": 0,
+  "exact_duplicate_pct": 0.0,
+  "total_missing_cells": 0,
+  "date_coverage": {
+    "start": "2024-01-01",
+    "end": "2025-06-01",
+    "distinct_months": 18,
+    "invalid_dates": 0
+  },
+  "coverage": {
+    "country": {
+      "count": 4,
+      "examples": [
+        "Brazil",
+        "India",
+        "United Kingdom",
+        "United States"
+      ]
+    },
+    "city": {
+      "count": 12,
+      "examples": [
+        "Bengaluru",
+        "Birmingham",
+        "Brasilia",
+        "Chicago",
+        "Delhi",
+        "Houston",
+        "London",
+        "Manchester",
+        "Mumbai",
+        "New York",
+        "Rio de Janeiro",
+        "Sao Paulo"
+      ]
+    },
+    "product_name": {
+      "count": 8,
+      "examples": [
+        "Cardiovex",
+        "Dermasol",
+        "Glycoban",
+        "Immunara",
+        "Neurocalm",
+        "Oncora",
+        "Renapro",
+        "Respira"
+      ]
+    },
+    "product_class": {
+      "count": 8,
+      "examples": [
+        "Cardiovascular",
+        "Dermatology",
+        "Diabetes",
+        "Immunology",
+        "Neurology",
+        "Oncology",
+        "Renal",
+        "Respiratory"
+      ]
+    },
+    "sales_manager": {
+      "count": 8,
+      "examples": [
+        "MGR_01",
+        "MGR_02",
+        "MGR_03",
+        "MGR_04",
+        "MGR_05",
+        "MGR_06",
+        "MGR_07",
+        "MGR_08"
+      ]
+    },
+    "sales_team": {
+      "count": 4,
+      "examples": [
+        "Team_Apex",
+        "Team_Bridge",
+        "Team_Catalyst",
+        "Team_Delta"
+      ]
+    },
+    "channel": {
+      "count": 3,
+      "examples": [
+        "Clinic",
+        "Hospital",
+        "Retail"
+      ]
+    },
+    "subchannel": {
+      "count": 6,
+      "examples": [
+        "Independent Pharmacy",
+        "Pharmacy Chain",
+        "Primary Care",
+        "Private Hospital",
+        "Public Hospital",
+        "Specialist Clinic"
+      ]
+    }
+  },
+  "schema_audit": {
+    "original_columns": [
+      "Distributor",
+      "Customer",
+      "City",
+      "Country",
+      "Latitude",
+      "Longitude",
+      "Channel",
+      "Sub-channel",
+      "Product Name",
+      "Product Class",
+      "Quantity",
+      "Price",
+      "Sales",
+      "Month",
+      "Year",
+      "Sales Manager",
+      "Sales Team"
+    ],
+    "canonical_mapping": {
+      "distributor": "Distributor",
+      "customer": "Customer",
+      "city": "City",
+      "country": "Country",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "channel": "Channel",
+      "subchannel": "Sub-channel",
+      "product_name": "Product Name",
+      "product_class": "Product Class",
+      "quantity": "Quantity",
+      "price": "Price",
+      "sales": "Sales",
+      "month": "Month",
+      "year": "Year",
+      "sales_manager": "Sales Manager",
+      "sales_team": "Sales Team"
+    },
+    "canonical_columns": [
+      "distributor",
+      "customer",
+      "city",
+      "country",
+      "latitude",
+      "longitude",
+      "channel",
+      "subchannel",
+      "product_name",
+      "product_class",
+      "quantity",
+      "price",
+      "sales",
+      "month",
+      "year",
+      "sales_manager",
+      "sales_team",
+      "date"
+    ],
+    "original_fields": [
+      "channel",
+      "city",
+      "country",
+      "customer",
+      "distributor",
+      "latitude",
+      "longitude",
+      "month",
+      "price",
+      "product_class",
+      "product_name",
+      "quantity",
+      "sales",
+      "sales_manager",
+      "sales_team",
+      "subchannel",
+      "year"
+    ],
+    "derived_or_defaulted_fields": []
+  },
+  "discovery_audit": [],
+  "validation_warnings": []
+}

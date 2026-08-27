@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.mypy_cache/
+.streamlit/secrets.toml
+.DS_Store
+Thumbs.db
+
+# Keep generated benchmark evidence, but ignore local scratch files.
+work/
+*.log
+build/
+dist/
+*.egg-info/
+.ipynb_checkpoints/

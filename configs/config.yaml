@@ -1,0 +1,117 @@
+project:
+  name: Field Representative Incentive Anomaly Detection
+  seed: 42
+
+paths:
+  raw_dir: data/raw
+  synthetic_dir: data/synthetic
+  processed_dir: data/processed
+  artifacts_dir: artifacts
+  search_roots:
+    - ../..
+
+data:
+  fallback_rows: 9000
+  fallback_start: "2024-01-01"
+  fallback_months: 18
+  reps_per_territory: 3
+  max_input_rows: null
+
+anomalies:
+  injection_rate: 0.06
+  contamination: 0.06
+  severity_min: 0.35
+  severity_max: 1.00
+  ranking_cutoffs: [0.01, 0.05, 0.10]
+
+preprocessing:
+  scaler: robust
+  clip_outliers: true
+  clip_lower_quantile: 0.01
+  clip_upper_quantile: 0.99
+  features:
+    - total_sales
+    - sales_growth
+    - rolling_sales_growth
+    - total_quantity
+    - quantity_growth
+    - average_price
+    - sales_per_customer
+    - sales_per_product
+    - sales_per_call
+    - unique_customers
+    - customer_coverage_pct
+    - customer_concentration
+    - channel_mix
+    - subchannel_mix
+    - unique_products
+    - product_concentration
+    - dominant_product_share
+    - calls_per_working_day
+    - calls_per_customer
+    - activity_efficiency
+    - travel_per_customer
+    - workload_index
+    - incentive_to_sales_ratio
+    - incentive_per_customer
+    - incentive_per_call
+    - incentive_variance
+    - incentive_variance_pct
+    - incentive_to_target_ratio
+    - sales_vs_peer_median
+    - incentive_vs_peer_median
+    - activity_vs_peer_median
+    - sales_zscore_within_peer
+    - incentive_zscore_within_peer
+    - activity_zscore_within_peer
+    - territory_market_potential
+    - territory_customer_density
+    - territory_sales_potential
+    - opportunity_index
+    - market_potential_adjusted_sales
+    - target_attainment_pct
+    - call_plan_adherence_pct
+    - rep_capacity
+
+models:
+  metric_sample_size: 2000
+  stability_repeats: 4
+  perturbation_std: 0.02
+  kmeans:
+    k_min: 2
+    k_max: 12
+    n_init: 20
+    max_iter: 500
+    min_cluster_pct: 1.0
+    max_cluster_pct: 90.0
+  dbscan:
+    min_samples: [5, 8, 12, 16]
+    eps_quantiles: [0.70, 0.76, 0.82, 0.86, 0.90, 0.94]
+    max_noise_pct: 55.0
+    min_cluster_pct: 0.5
+
+selection:
+  segmentation_weights:
+    silhouette_score: 0.20
+    davies_bouldin_score: 0.12
+    calinski_harabasz_score: 0.08
+    cluster_balance: 0.20
+    stability_score: 0.22
+    runtime_seconds: 0.03
+    interpretability: 0.075
+    operational_usefulness: 0.075
+  anomaly_weights:
+    recall: 0.16
+    precision: 0.10
+    f2: 0.14
+    pr_auc: 0.18
+    lift_at_5pct: 0.18
+    stability_score: 0.08
+    runtime_seconds: 0.04
+    interpretability: 0.06
+    operational_usefulness: 0.06
+
+reporting:
+  top_driver_count: 5
+  plot_dpi: 140
+  high_risk_top_pct: 0.10

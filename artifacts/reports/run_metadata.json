@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "source_type": "fallback_synthetic",
+  "fallback_used": true,
+  "source_path": "data/synthetic/fallback_pharma_sales.csv",
+  "source_sha256": "583fd210513b096ddaba101fc256f52288838fc720241ccdbad28d99f910de71",
+  "source_rows": 9000,
+  "analytical_rows": 4161,
+  "representatives": 36,
+  "injected_anomalies": 250,
+  "injected_anomaly_rate": 0.0600817111271329,
+  "best_segmentation_model": "K-Means",
+  "best_anomaly_detection_model": "K-Means",
+  "plots_generated": 20,
+  "runtime_seconds": 49.84007090004161,
+  "seed": 42,
+  "python_version": "3.10.4",
+  "sklearn_version": "1.7.2",
+  "config_path": "configs/config.yaml"
+}

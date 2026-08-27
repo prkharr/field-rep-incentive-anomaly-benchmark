@@ -1,0 +1,22 @@
+Metric,K-Means,DBSCAN
+Best Parameters,"{""algorithm"": ""K-Means"", ""inertia"": 135589.82075416922, ""max_iter"": 500, ""n_clusters"": 3, ""n_init"": 20, ""random_state"": 42}","{""algorithm"": ""DBSCAN"", ""eps"": 5.285147501922374, ""metric"": ""euclidean"", ""min_samples"": 16, ""prediction_note"": ""Nearest-core assignment within eps; sklearn DBSCAN has no native predict.""}"
+Number of Clusters,3,2
+Noise %,0.0,5.359288632540254
+Silhouette,0.24811063532846736,0.9091990751504818
+Davies-Bouldin,1.3304027164937968,0.11408508527797469
+Calinski-Harabasz,3000.043748470106,3064.4350445223636
+Stability,0.9985792923571069,0.9966315287179194
+Precision,0.656,0.6591928251121076
+Recall,0.656,0.588
+F1,0.656,0.6215644820295984
+F2,0.656,0.6009811937857726
+PR-AUC,0.7102883372659499,0.6917592914218301
+ROC-AUC,0.9242904627972386,0.9295412937867555
+Precision@5%,0.6985645933014354,0.6842105263157895
+Recall@5%,0.584,0.572
+Lift@5%,11.626909090909091,11.388000000000002
+Top-Decile Capture,0.764,0.752
+Runtime,0.12982720020227134,0.11467539984732866
+Interpretability,"High: compact segments, centroid distance, feature contributions","Medium-high: noise label, density distance, unusual features"
+Strength,Stable segmentation and continuous distance ranking,Finds irregular dense regions and explicit noise without k
+Limitation,Assumes roughly compact clusters and requires k,Scale/eps sensitive; no native out-of-sample predict
