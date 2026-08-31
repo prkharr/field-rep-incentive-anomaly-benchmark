@@ -1,0 +1,277 @@
+model,model_family,metric,value
+PCA Reconstruction,reconstruction,parameters,"{""n_components"": 0.95}"
+Autoencoder,reconstruction,parameters,"{""hidden_layer_sizes"": [64, 16, 64], ""max_iter"": 250, ""alpha"": 0.1}"
+Best Ensemble,ensemble,parameters,"{""kind"": ""maximum"", ""weights"": {""Isolation Forest"": 0.3, ""EWMA Residual"": 0.2, ""Robust Peer Baseline"": 0.2, ""PCA Reconstruction"": 0.15, ""Business Rules"": 0.15}}"
+DBSCAN,density,parameters,"{""eps"": 7.9576297062571895, ""min_samples"": 12}"
+Business Rules,rules,parameters,{}
+K-Means,clustering,parameters,"{""n_clusters"": 4}"
+Robust Peer Baseline,peer,parameters,{}
+Isolation Forest,isolation,parameters,"{""n_estimators"": 200, ""max_samples"": 0.8, ""max_features"": 1.0, ""bootstrap"": false}"
+Rolling Residual,temporal,parameters,"{""window"": 6, ""min_history"": 3, ""ewma_alpha"": 0.3, ""cusum_drift"": 0.5}"
+EWMA Residual,temporal,parameters,"{""window"": 6, ""min_history"": 3, ""ewma_alpha"": 0.3, ""cusum_drift"": 0.5}"
+Seasonal Residual,temporal,parameters,"{""window"": 6, ""min_history"": 3, ""ewma_alpha"": 0.3, ""cusum_drift"": 0.5}"
+Change-Point / Level Shift,temporal,parameters,"{""window"": 6, ""min_history"": 3, ""ewma_alpha"": 0.3, ""cusum_drift"": 0.5}"
+PCA Reconstruction,reconstruction,precision,0.5
+Autoencoder,reconstruction,precision,0.5
+Best Ensemble,ensemble,precision,0.5625
+DBSCAN,density,precision,0.375
+Business Rules,rules,precision,0.25
+K-Means,clustering,precision,0.25
+Robust Peer Baseline,peer,precision,0.1875
+Isolation Forest,isolation,precision,0.125
+Rolling Residual,temporal,precision,0.1875
+EWMA Residual,temporal,precision,0.1875
+Seasonal Residual,temporal,precision,0.125
+Change-Point / Level Shift,temporal,precision,0.0
+PCA Reconstruction,reconstruction,recall,0.42105263157894735
+Autoencoder,reconstruction,recall,0.42105263157894735
+Best Ensemble,ensemble,recall,0.47368421052631576
+DBSCAN,density,recall,0.3157894736842105
+Business Rules,rules,recall,0.21052631578947367
+K-Means,clustering,recall,0.21052631578947367
+Robust Peer Baseline,peer,recall,0.15789473684210525
+Isolation Forest,isolation,recall,0.10526315789473684
+Rolling Residual,temporal,recall,0.15789473684210525
+EWMA Residual,temporal,recall,0.15789473684210525
+Seasonal Residual,temporal,recall,0.10526315789473684
+Change-Point / Level Shift,temporal,recall,0.0
+PCA Reconstruction,reconstruction,F1,0.45714285714285713
+Autoencoder,reconstruction,F1,0.45714285714285713
+Best Ensemble,ensemble,F1,0.5142857142857142
+DBSCAN,density,F1,0.34285714285714286
+Business Rules,rules,F1,0.22857142857142856
+K-Means,clustering,F1,0.22857142857142856
+Robust Peer Baseline,peer,F1,0.17142857142857143
+Isolation Forest,isolation,F1,0.11428571428571428
+Rolling Residual,temporal,F1,0.17142857142857143
+EWMA Residual,temporal,F1,0.17142857142857143
+Seasonal Residual,temporal,F1,0.11428571428571428
+Change-Point / Level Shift,temporal,F1,0.0
+PCA Reconstruction,reconstruction,F2,0.43478260869565216
+Autoencoder,reconstruction,F2,0.43478260869565216
+Best Ensemble,ensemble,F2,0.4891304347826087
+DBSCAN,density,F2,0.32608695652173914
+Business Rules,rules,F2,0.21739130434782608
+K-Means,clustering,F2,0.21739130434782608
+Robust Peer Baseline,peer,F2,0.16304347826086957
+Isolation Forest,isolation,F2,0.10869565217391304
+Rolling Residual,temporal,F2,0.16304347826086957
+EWMA Residual,temporal,F2,0.16304347826086957
+Seasonal Residual,temporal,F2,0.10869565217391304
+Change-Point / Level Shift,temporal,F2,0.0
+PCA Reconstruction,reconstruction,PR_AUC,0.3946251236994534
+Autoencoder,reconstruction,PR_AUC,0.38206250183172186
+Best Ensemble,ensemble,PR_AUC,0.3496436814061063
+DBSCAN,density,PR_AUC,0.2974568932826843
+Business Rules,rules,PR_AUC,0.23771431346554364
+K-Means,clustering,PR_AUC,0.2186328953679986
+Robust Peer Baseline,peer,PR_AUC,0.16516650055117948
+Isolation Forest,isolation,PR_AUC,0.13002200544608591
+Rolling Residual,temporal,PR_AUC,0.12047260618725698
+EWMA Residual,temporal,PR_AUC,0.11689426848919401
+Seasonal Residual,temporal,PR_AUC,0.10794362683533681
+Change-Point / Level Shift,temporal,PR_AUC,0.07609653295462925
+PCA Reconstruction,reconstruction,ROC_AUC,0.8437219328183941
+Autoencoder,reconstruction,ROC_AUC,0.8072570504760194
+Best Ensemble,ensemble,ROC_AUC,0.8580923298006107
+DBSCAN,density,ROC_AUC,0.8342015448176755
+Business Rules,rules,ROC_AUC,0.6837614514100951
+K-Means,clustering,ROC_AUC,0.7905514639841925
+Robust Peer Baseline,peer,ROC_AUC,0.7045985270343093
+Isolation Forest,isolation,ROC_AUC,0.6921142446560086
+Rolling Residual,temporal,ROC_AUC,0.6511586132566912
+EWMA Residual,temporal,ROC_AUC,0.6292437578588108
+Seasonal Residual,temporal,ROC_AUC,0.6472067540865817
+Change-Point / Level Shift,temporal,ROC_AUC,0.5624214118915034
+PCA Reconstruction,reconstruction,Precision@1%,0.5
+Autoencoder,reconstruction,Precision@1%,0.5
+Best Ensemble,ensemble,Precision@1%,0.5
+DBSCAN,density,Precision@1%,0.5
+Business Rules,rules,Precision@1%,0.5
+K-Means,clustering,Precision@1%,0.25
+Robust Peer Baseline,peer,Precision@1%,0.5
+Isolation Forest,isolation,Precision@1%,0.0
+Rolling Residual,temporal,Precision@1%,0.0
+EWMA Residual,temporal,Precision@1%,0.0
+Seasonal Residual,temporal,Precision@1%,0.0
+Change-Point / Level Shift,temporal,Precision@1%,0.0
+PCA Reconstruction,reconstruction,Recall@1%,0.10526315789473684
+Autoencoder,reconstruction,Recall@1%,0.10526315789473684
+Best Ensemble,ensemble,Recall@1%,0.10526315789473684
+DBSCAN,density,Recall@1%,0.10526315789473684
+Business Rules,rules,Recall@1%,0.10526315789473684
+K-Means,clustering,Recall@1%,0.05263157894736842
+Robust Peer Baseline,peer,Recall@1%,0.10526315789473684
+Isolation Forest,isolation,Recall@1%,0.0
+Rolling Residual,temporal,Recall@1%,0.0
+EWMA Residual,temporal,Recall@1%,0.0
+Seasonal Residual,temporal,Recall@1%,0.0
+Change-Point / Level Shift,temporal,Recall@1%,0.0
+PCA Reconstruction,reconstruction,Lift@1%,8.210526315789474
+Autoencoder,reconstruction,Lift@1%,8.210526315789474
+Best Ensemble,ensemble,Lift@1%,8.210526315789474
+DBSCAN,density,Lift@1%,8.210526315789474
+Business Rules,rules,Lift@1%,8.210526315789474
+K-Means,clustering,Lift@1%,4.105263157894737
+Robust Peer Baseline,peer,Lift@1%,8.210526315789474
+Isolation Forest,isolation,Lift@1%,0.0
+Rolling Residual,temporal,Lift@1%,0.0
+EWMA Residual,temporal,Lift@1%,0.0
+Seasonal Residual,temporal,Lift@1%,0.0
+Change-Point / Level Shift,temporal,Lift@1%,0.0
+PCA Reconstruction,reconstruction,Precision@5%,0.5
+Autoencoder,reconstruction,Precision@5%,0.5
+Best Ensemble,ensemble,Precision@5%,0.5625
+DBSCAN,density,Precision@5%,0.375
+Business Rules,rules,Precision@5%,0.25
+K-Means,clustering,Precision@5%,0.25
+Robust Peer Baseline,peer,Precision@5%,0.1875
+Isolation Forest,isolation,Precision@5%,0.125
+Rolling Residual,temporal,Precision@5%,0.1875
+EWMA Residual,temporal,Precision@5%,0.1875
+Seasonal Residual,temporal,Precision@5%,0.125
+Change-Point / Level Shift,temporal,Precision@5%,0.0
+PCA Reconstruction,reconstruction,Recall@5%,0.42105263157894735
+Autoencoder,reconstruction,Recall@5%,0.42105263157894735
+Best Ensemble,ensemble,Recall@5%,0.47368421052631576
+DBSCAN,density,Recall@5%,0.3157894736842105
+Business Rules,rules,Recall@5%,0.21052631578947367
+K-Means,clustering,Recall@5%,0.21052631578947367
+Robust Peer Baseline,peer,Recall@5%,0.15789473684210525
+Isolation Forest,isolation,Recall@5%,0.10526315789473684
+Rolling Residual,temporal,Recall@5%,0.15789473684210525
+EWMA Residual,temporal,Recall@5%,0.15789473684210525
+Seasonal Residual,temporal,Recall@5%,0.10526315789473684
+Change-Point / Level Shift,temporal,Recall@5%,0.0
+PCA Reconstruction,reconstruction,Lift@5%,8.210526315789474
+Autoencoder,reconstruction,Lift@5%,8.210526315789474
+Best Ensemble,ensemble,Lift@5%,9.236842105263158
+DBSCAN,density,Lift@5%,6.157894736842105
+Business Rules,rules,Lift@5%,4.105263157894737
+K-Means,clustering,Lift@5%,4.105263157894737
+Robust Peer Baseline,peer,Lift@5%,3.0789473684210527
+Isolation Forest,isolation,Lift@5%,2.0526315789473686
+Rolling Residual,temporal,Lift@5%,3.0789473684210527
+EWMA Residual,temporal,Lift@5%,3.0789473684210527
+Seasonal Residual,temporal,Lift@5%,2.0526315789473686
+Change-Point / Level Shift,temporal,Lift@5%,0.0
+PCA Reconstruction,reconstruction,Precision@10%,0.34375
+Autoencoder,reconstruction,Precision@10%,0.34375
+Best Ensemble,ensemble,Precision@10%,0.34375
+DBSCAN,density,Precision@10%,0.28125
+Business Rules,rules,Precision@10%,0.1875
+K-Means,clustering,Precision@10%,0.21875
+Robust Peer Baseline,peer,Precision@10%,0.21875
+Isolation Forest,isolation,Precision@10%,0.125
+Rolling Residual,temporal,Precision@10%,0.125
+EWMA Residual,temporal,Precision@10%,0.15625
+Seasonal Residual,temporal,Precision@10%,0.125
+Change-Point / Level Shift,temporal,Precision@10%,0.09375
+PCA Reconstruction,reconstruction,Recall@10%,0.5789473684210527
+Autoencoder,reconstruction,Recall@10%,0.5789473684210527
+Best Ensemble,ensemble,Recall@10%,0.5789473684210527
+DBSCAN,density,Recall@10%,0.47368421052631576
+Business Rules,rules,Recall@10%,0.3157894736842105
+K-Means,clustering,Recall@10%,0.3684210526315789
+Robust Peer Baseline,peer,Recall@10%,0.3684210526315789
+Isolation Forest,isolation,Recall@10%,0.21052631578947367
+Rolling Residual,temporal,Recall@10%,0.21052631578947367
+EWMA Residual,temporal,Recall@10%,0.2631578947368421
+Seasonal Residual,temporal,Recall@10%,0.21052631578947367
+Change-Point / Level Shift,temporal,Recall@10%,0.15789473684210525
+PCA Reconstruction,reconstruction,Lift@10%,5.644736842105263
+Autoencoder,reconstruction,Lift@10%,5.644736842105263
+Best Ensemble,ensemble,Lift@10%,5.644736842105263
+DBSCAN,density,Lift@10%,4.618421052631579
+Business Rules,rules,Lift@10%,3.0789473684210527
+K-Means,clustering,Lift@10%,3.5921052631578947
+Robust Peer Baseline,peer,Lift@10%,3.5921052631578947
+Isolation Forest,isolation,Lift@10%,2.0526315789473686
+Rolling Residual,temporal,Lift@10%,2.0526315789473686
+EWMA Residual,temporal,Lift@10%,2.5657894736842106
+Seasonal Residual,temporal,Lift@10%,2.0526315789473686
+Change-Point / Level Shift,temporal,Lift@10%,1.5394736842105263
+PCA Reconstruction,reconstruction,top_decile_capture,0.5789473684210527
+Autoencoder,reconstruction,top_decile_capture,0.5789473684210527
+Best Ensemble,ensemble,top_decile_capture,0.5789473684210527
+DBSCAN,density,top_decile_capture,0.47368421052631576
+Business Rules,rules,top_decile_capture,0.3157894736842105
+K-Means,clustering,top_decile_capture,0.3684210526315789
+Robust Peer Baseline,peer,top_decile_capture,0.3684210526315789
+Isolation Forest,isolation,top_decile_capture,0.21052631578947367
+Rolling Residual,temporal,top_decile_capture,0.21052631578947367
+EWMA Residual,temporal,top_decile_capture,0.2631578947368421
+Seasonal Residual,temporal,top_decile_capture,0.21052631578947367
+Change-Point / Level Shift,temporal,top_decile_capture,0.15789473684210525
+PCA Reconstruction,reconstruction,stability,1.0
+Autoencoder,reconstruction,stability,0.9166666666666666
+Best Ensemble,ensemble,stability,1.0
+DBSCAN,density,stability,1.0
+Business Rules,rules,stability,1.0
+K-Means,clustering,stability,0.9791666666666667
+Robust Peer Baseline,peer,stability,1.0
+Isolation Forest,isolation,stability,0.7916666666666666
+Rolling Residual,temporal,stability,1.0
+EWMA Residual,temporal,stability,1.0
+Seasonal Residual,temporal,stability,1.0
+Change-Point / Level Shift,temporal,stability,1.0
+PCA Reconstruction,reconstruction,runtime_seconds,0.06122630002209917
+Autoencoder,reconstruction,runtime_seconds,4.722092899959534
+Best Ensemble,ensemble,runtime_seconds,12.895317350019468
+DBSCAN,density,runtime_seconds,1.163754900044296
+Business Rules,rules,runtime_seconds,0.031161600025370717
+K-Means,clustering,runtime_seconds,3.8813603000016883
+Robust Peer Baseline,peer,runtime_seconds,0.06286419997923076
+Isolation Forest,isolation,runtime_seconds,11.576875899976585
+Rolling Residual,temporal,runtime_seconds,1.1629808500001673
+EWMA Residual,temporal,runtime_seconds,1.1629808500001673
+Seasonal Residual,temporal,runtime_seconds,1.1629808500001673
+Change-Point / Level Shift,temporal,runtime_seconds,1.1629808500001673
+PCA Reconstruction,reconstruction,explainability,Per-feature squared reconstruction error
+Autoencoder,reconstruction,explainability,Per-feature squared reconstruction error
+Best Ensemble,ensemble,explainability,Weighted component signals
+DBSCAN,density,explainability,Noise/core assignment and training-neighbor distance
+Business Rules,rules,explainability,Named DEMO incentive/commercial rules
+K-Means,clustering,explainability,Squared standardized centroid-distance contributions
+Robust Peer Baseline,peer,explainability,Same-month cohort median/MAD/percentile with fallback
+Isolation Forest,isolation,explainability,Training-median feature ablation for top review rows; peer/history deviations
+Rolling Residual,temporal,explainability,Prior-only observed/expected residual and history length
+EWMA Residual,temporal,explainability,Prior-only observed/expected residual and history length
+Seasonal Residual,temporal,explainability,Prior-only observed/expected residual and history length
+Change-Point / Level Shift,temporal,explainability,Prior-only observed/expected residual and history length
+PCA Reconstruction,reconstruction,operational_usefulness,Prioritized review with human assessment
+Autoencoder,reconstruction,operational_usefulness,Prioritized review with human assessment
+Best Ensemble,ensemble,operational_usefulness,Prioritized review with human assessment
+DBSCAN,density,operational_usefulness,Prioritized review with human assessment
+Business Rules,rules,operational_usefulness,Prioritized review with human assessment
+K-Means,clustering,operational_usefulness,Prioritized review with human assessment
+Robust Peer Baseline,peer,operational_usefulness,Prioritized review with human assessment
+Isolation Forest,isolation,operational_usefulness,Prioritized review with human assessment
+Rolling Residual,temporal,operational_usefulness,Prioritized review with human assessment
+EWMA Residual,temporal,operational_usefulness,Prioritized review with human assessment
+Seasonal Residual,temporal,operational_usefulness,Prioritized review with human assessment
+Change-Point / Level Shift,temporal,operational_usefulness,Prioritized review with human assessment
+PCA Reconstruction,reconstruction,recommended_role,Primary review ranking
+Autoencoder,reconstruction,recommended_role,Diagnostic comparator
+Best Ensemble,ensemble,recommended_role,Diagnostic comparator
+DBSCAN,density,recommended_role,Diagnostic comparator
+Business Rules,rules,recommended_role,Diagnostic comparator
+K-Means,clustering,recommended_role,Diagnostic comparator
+Robust Peer Baseline,peer,recommended_role,Diagnostic comparator
+Isolation Forest,isolation,recommended_role,Diagnostic comparator
+Rolling Residual,temporal,recommended_role,Diagnostic comparator
+EWMA Residual,temporal,recommended_role,Temporal specialist
+Seasonal Residual,temporal,recommended_role,Diagnostic comparator
+Change-Point / Level Shift,temporal,recommended_role,Diagnostic comparator
+PCA Reconstruction,reconstruction,model_size_bytes,36601
+Autoencoder,reconstruction,model_size_bytes,451401
+Best Ensemble,ensemble,model_size_bytes,7901340
+DBSCAN,density,model_size_bytes,5784570
+Business Rules,rules,model_size_bytes,0
+K-Means,clustering,model_size_bytes,54035
+Robust Peer Baseline,peer,model_size_bytes,0
+Isolation Forest,isolation,model_size_bytes,7864739
+Rolling Residual,temporal,model_size_bytes,0
+EWMA Residual,temporal,model_size_bytes,0
+Seasonal Residual,temporal,model_size_bytes,0
+Change-Point / Level Shift,temporal,model_size_bytes,0

@@ -690,6 +690,14 @@ def render_table(frame: pd.DataFrame, height: int = 430) -> None:
     )
 
 
+if (METRICS_DIR / 'final_anomaly_model_benchmark.csv').exists():
+    workspace = st.sidebar.radio('Dataset workspace', ['Real commercial extension', 'Legacy synthetic demo'])
+    if workspace == 'Real commercial extension':
+        from field_rep_anomaly.extended_dashboard import render_extended
+        render_extended(ROOT, render_table, section)
+        st.stop()
+    st.warning('Legacy synthetic demonstration: its numbers are NOT comparable with the real-data extension.')
+
 tables: dict[str, pd.DataFrame] = {}
 load_errors: list[str] = []
 for table_name, table_path in TABLE_PATHS.items():

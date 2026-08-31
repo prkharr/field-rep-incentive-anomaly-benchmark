@@ -1,156 +1,171 @@
-# Field Representative Incentive Anomaly Detection
+# Pharma Commercial Review & Field-Force Capacity
 
-An executed, reproducible K-Means and DBSCAN benchmark for prioritizing unusual pharmaceutical field-representative performance and incentive patterns for business review.
+Two connected business questions, answered by separate analytical modules:
 
-> **Data disclosure:** no qualifying field-sales CSV was available in the workspace. This committed run therefore uses a clearly labeled deterministic fallback commercial dataset. Results are demonstration evidence—not production findings and not evidence of fraud, misconduct, or incorrect payment.
+1. **Which representative performance / incentive observations should be reviewed first, and why?**
+2. **Where might commercial workload exceed available field capacity?**
 
-## Executed result
+This is an executed hackathon benchmark—not a production fraud detector or an automated hiring system. Real commercial records form the foundation. All incentive amounts are explicitly **simulated**, and all detection labels are **controlled injections**.
 
-The pipeline completed successfully with seed `42` using Python 3.10.4 and scikit-learn 1.7.2.
+## Dataset and scope
 
-| Measure | Executed value |
-|---|---:|
-| Source-like transaction rows | 9,000 |
-| Source columns | 18 |
-| Date coverage | Jan 2024–Jun 2025 |
-| Countries / cities | 4 / 12 |
-| Products / classes | 8 / 8 |
-| Synthetic representatives | 36 |
-| Analytical rows | 4,161 |
-| Analytical grain | Rep × Product × Territory × Month |
-| Injected anomalies | 250 (6.01%) |
-| Plots generated | 20 |
-| Pipeline runtime | ~52 seconds |
+The user-provided `pharma-data.csv` contains 167,760 rows and 18 columns: 13 actual sales representatives, 4 managers, 4 teams, 751 customers, 241 products and 6 product classes. Three exact duplicates and one incomplete row are excluded from the modeling copy, leaving 167,756 transactions. The original CSV is unchanged and git-ignored because its redistribution license has not been verified.
 
-Workspace-wide discovery reviewed 135 CSV and 4 XLSX files. No file matched more than one of the expected commercial fields. The two nearest pharma datasets were company-level financial statements and drug-development pipeline records, both rejected as the wrong business grain. See [workspace_data_discovery.md](docs/workspace_data_discovery.md) and [data_quality_report.md](artifacts/reports/data_quality_report.md).
+**Actual coverage is January 2017–April 2019. Poland ends in December 2018; 2019 contains Germany only.** Missing country records are not evidence of zero demand, zero staffing or poor employee performance. The coverage break is a material limitation for historical anomaly comparisons. Poland units are ineligible for May 2019 FTE-gap recommendations.
 
-## Final benchmark
+The primary grain is **Rep × Product Class × Month**: 2,184 observations, median 72 transactions per observation, and no single-transaction cells. The country-specific candidate has 3,120 observations (median 53 transactions); rep-month has 364. The primary grain retains product-class interpretation while limiting dimensions for only 13 reps. Market and planning views retain country so reviewers can inspect the coverage break.
 
-These values come from the committed execution—not hand-entered estimates.
+## Three-layer architecture
 
-| Metric | K-Means | DBSCAN |
-|---|---:|---:|
-| Selected parameters | `k=3` | `eps=5.2851`, `min_samples=16` |
-| Clusters | 3 | 2 (+ noise) |
-| Noise | 0.00% | 5.36% |
-| Silhouette | 0.248 | 0.909 |
-| Davies–Bouldin | 1.330 | 0.114 |
-| Stability | 0.999 | 0.997 |
-| Precision | 0.656 | 0.659 |
-| Recall | 0.656 | 0.588 |
-| F1 / F2 | 0.656 / 0.656 | 0.622 / 0.601 |
-| PR-AUC | 0.710 | 0.692 |
-| ROC-AUC | 0.924 | 0.930 |
-| Precision@5% | 0.699 | 0.684 |
-| Recall@5% | 0.584 | 0.572 |
-| Lift@5% | 11.63× | 11.39× |
-| Top-decile capture | 76.4% | 75.2% |
+- **Commercial behavior:** real identities, transaction aggregation, customer coverage, product/distributor/channel mix, geography, peers and prior-only history.
+- **DEMO incentive review:** configurable compensation arithmetic, separate controlled benchmark copies, common model scores and explainable investigation queues.
+- **Capacity scenarios:** demand forecasts, workload proxies, historical capacity, fractional rep allocation and FTE scenarios. Anomaly scores never decide hiring.
 
-### Model conclusions
+The extension reuses the original K-Means/DBSCAN model classes, preprocessing interface, evaluation functions and dashboard shell. `run_pipeline.py` remains the legacy synthetic demonstration; **use `run_extended_benchmark.py` for the real-data solution**. Legacy results must not be compared with the new table. See [legacy README](docs/legacy_benchmark_readme.md).
 
-- **Best segmentation model: K-Means.** Its weighted segmentation score was approximately `0.60` versus DBSCAN's `0.43`. Selection did not rely on elbow or silhouette alone: it incorporated silhouette, Davies–Bouldin, Calinski–Harabasz, cluster balance, stability, bounded runtime utility, interpretability, and operational usefulness. The `k=2` result was rejected because one cluster exceeded 90% of the population; configurations with sub-1% microclusters were also rejected.
-- **Best anomaly-detection model: K-Means.** Its weighted anomaly score was approximately `0.90` versus `0.14`, reflecting the configured mix of recall, precision, F2, PR-AUC, Lift@5%, stability, bounded runtime utility, interpretability, and operational usefulness. DBSCAN retained slightly higher point precision and ROC-AUC, but K-Means captured more injected anomalies and ranked the finite review queue better on the configured priorities.
+## Features and incentive demonstration
 
-The weights live in [config.yaml](configs/config.yaml), while every contribution is auditable in `artifacts/metrics/model_selection_contributions.csv`. Synthetic labels were used only for evaluation and final anomaly-model comparison; they were never clustering inputs or unsupervised tuning criteria.
+The executed model uses 124 explicitly allowlisted numeric features: sales/quantity/price, transaction value, unique/new/repeat customers, customer loss and concentration, product mix/breadth, geographic dispersion, country/channel/distributor mix, robust peer deviations, ranks and temporal history. Calendar lags 1/2/3/6/12, rolling statistics, MAD, growth, acceleration and personal-history deviations use earlier months only.
 
-## What the pipeline does
+Same-month peer comparisons are retrospective after month close. Small cohorts fall back from team/country/class to country/class, class, then month; they do not borrow future observations. Counts are computed from source transactions, not summed across overlapping groups.
 
-1. Searches configured workspace locations for a defensible pharma commercial CSV and records the search audit.
-2. Profiles exact columns, shape, types, nulls, cardinality, statistics, duplicates, dates, geography, products, managers, and teams.
-3. Builds deterministic `Sales Team → Manager → Territory → Rep → Customer` mappings.
-4. Aggregates transactions to rep × product × territory × month.
-5. Adds business-related activity, targets, capacity, opportunity, calculated incentive, actual payout, and adjustment fields without replacing the commercial foundation.
-6. Injects 12 controlled anomaly types with variable severity and writes a before/after audit.
-7. Engineers 42 numeric commercial, portfolio, activity, incentive, peer, and opportunity features.
-8. Median-imputes, fitted-quantile-clips, and RobustScales features; StandardScaler and disabled clipping remain configurable alternatives.
-9. Tunes K-Means (`k=2…12`) and DBSCAN (`eps × min_samples`) without anomaly-label leakage.
-10. Produces clustering, classification, ranking, stability, profiles, per-row explanations, representative rollups, persisted models, and dashboard-ready artifacts.
+DEMO target = prior-three-month median sales × configurable growth (fixed cold-start assumption when history is absent). Expected incentive = base + capped attainment component + above-target accelerator. Actual DEMO payout = expected incentive + configurable adjustment. The arithmetic expressions and constants live in [config.yaml](configs/config.yaml) and use a restricted arithmetic interpreter, not arbitrary code execution. Every incentive field starts with `simulated_`.
 
-K-Means anomaly distance is the ordinary Euclidean (L2) norm from each transformed row to its assigned nearest centroid. It is regression-tested against both the manual formula and scikit-learn's `KMeans.transform`; squared distances reconcile to inertia. The 0–1 score is the empirical percentile of that distance, and feature contributions are shares of squared distance.
+## Fair validation and distance
 
-## Quick start
+| Partition | Months | Analytical rows |
+|---|---|---:|
+| Train | Jan 2017–Jun 2018 | 1,404 |
+| Validation | Jul–Dec 2018 | 468 |
+| Test | Jan–Apr 2019 | 312 |
+
+Preprocessing is fitted on **clean training data only**: median imputation → signed-log tail compression → RobustScaler. No test fitting and no clipping of held-out extremes. Synthetic labels never enter the feature allowlist.
+
+**K-Means uses ordinary Euclidean L2 distance to the assigned nearest centroid in this transformed space.** Executed checks reconcile the manual norm, sklearn distances and training inertia. The metric is not cosine distance and is not computed on unscaled raw commercial values.
+
+The clean commercial/DEMO dataset is never injected. Primary benchmark copies contain approximately 6% injected validation/test anomalies, with no training injections. The injection audit records type, severity, feature, original/injected values, date, representative and seed. Aggregate perturbations include payout, adjustment, commercial, coverage/mix and temporal patterns; sustained events use consecutive months. Three independent 1.5%-prevalence runs test sensitivity without retraining or retuning. Some types have no test support: they are explicitly unavailable, not perfect detections.
+
+Model selection uses validation only. Clustering grids use clean validation quality and balance constraints. Other grids use validation ranking utility; final selection adds seed queue stability. Final test labels are evaluated only after model/ensemble choices are frozen.
+
+## Executed final benchmark
+
+All rows below use the **same 312 held-out observations**. Precision, recall, F1/F2 use a fixed 5% review queue (16 rows), not an optimized test threshold. The full table also contains ROC-AUC, Precision/Recall/Lift at 1%, 5%, 10%, model sizes and interpretation.
+
+<!-- EXTENDED_RESULTS_START -->
+
+| model | Recall@5% | Lift@5% | PR_AUC | F2 | stability | runtime_seconds |
+| --- | --- | --- | --- | --- | --- | --- |
+| PCA Reconstruction | 0.421 | 8.211 | 0.395 | 0.435 | 1.000 | 0.061 |
+| Autoencoder | 0.421 | 8.211 | 0.382 | 0.435 | 0.917 | 4.722 |
+| Best Ensemble | 0.474 | 9.237 | 0.350 | 0.489 | 1.000 | 12.895 |
+| DBSCAN | 0.316 | 6.158 | 0.297 | 0.326 | 1.000 | 1.164 |
+| Business Rules | 0.211 | 4.105 | 0.238 | 0.217 | 1.000 | 0.031 |
+| K-Means | 0.211 | 4.105 | 0.219 | 0.217 | 0.979 | 3.881 |
+| Robust Peer Baseline | 0.158 | 3.079 | 0.165 | 0.163 | 1.000 | 0.063 |
+| Isolation Forest | 0.105 | 2.053 | 0.130 | 0.109 | 0.792 | 11.577 |
+| Rolling Residual | 0.158 | 3.079 | 0.120 | 0.163 | 1.000 | 1.163 |
+| EWMA Residual | 0.158 | 3.079 | 0.117 | 0.163 | 1.000 | 1.163 |
+| Seasonal Residual | 0.105 | 2.053 | 0.108 | 0.109 | 1.000 | 1.163 |
+| Change-Point / Level Shift | 0.000 | 0.000 | 0.076 | 0.000 | 1.000 | 1.163 |
+
+<!-- EXTENDED_RESULTS_END -->
+
+[Complete benchmark CSV](artifacts/metrics/final_anomaly_model_benchmark.csv) · [Validation results](artifacts/metrics/validation_model_benchmark.csv) · [Executed report](artifacts/reports/executed_extended_benchmark_summary.md)
+
+Runtimes include bounded parameter search for fitted models; the ensemble includes its component costs. Stability is validation top-5% queue overlap across seed refits. A deterministic method's score of 1 does not establish robustness to data perturbation.
+
+### What the benchmark recommends
+
+- **Primary anomaly ranking: PCA Reconstruction**, selected on validation. Use peer/history explanations and the transparent business-rule signals alongside it.
+- **Segmentation: K-Means**, with four fitted clusters. Some fitted clusters may have no test members. DBSCAN is a diagnostic density comparator; its high held-out noise rate limits operational segmentation.
+- **Temporal specialist: EWMA residual**, selected on validation; keep rolling, seasonal and sustained-shift signals available separately.
+- **Autoencoder versus PCA:** compare both validation and test tables. PCA is simpler, faster and seed-stable. The Autoencoder's bounded training reached its iteration limit; convergence/loss information is saved rather than hidden.
+- **Ensemble:** equal percentile/rank average, consensus, maximum complementary signal and bounded weighted variants were tested after correlation/overlap analysis. The best candidate did **not** achieve the predefined material improvement over PCA. Do not deploy an ensemble merely because it is more complex.
+- **Interpretability:** business rules and robust peer baselines expose recognizable commercial reasons; K-Means and reconstruction methods expose feature contributions. Isolation Forest includes bounded training-median feature ablation for the top 20 review rows.
+
+Clean DEMO payouts follow an exact formula. Reconstruction performance partly reflects detecting violations of that artificial relationship, not proven ability to identify real compensation issues. Only 19 positive test labels make detailed type-level estimates fragile.
+
+## Investigation workflow
+
+1. Open the clean-data queue for actual unsupervised review priorities; use the benchmark queue only to study injected-label performance.
+2. Inspect commercial source coverage, actual versus expected history, peer comparisons, DEMO payout deltas, model agreement and feature drivers.
+3. Validate against authoritative compensation and commercial records before drawing conclusions.
+4. Export review status/comments for a human review process. The dashboard is read-only; it is not a case-management database.
+
+Every model exposes raw score, normalized score/percentile, raw TRAIN-reference threshold, threshold exceedance and separate exact-budget review flag. Higher is more anomalous. Calibration uses TRAIN empirical ranks with bounded monotone tails to preserve extreme ordering; these are not fraud probabilities.
+
+## Temporal methods
+
+Rolling residual uses prior median/MAD; EWMA uses a prior exponentially weighted expectation; seasonal residual compares the exact same month a year earlier; the change detector combines one-sided CUSUM and consecutive same-direction evidence. A separate trend signal compares prior subwindows.
+
+Observed/expected values, residuals, history length, direction, availability and review flags are exported per observation and metric. Earlier test observations can update later expectations in rolling-origin scoring; future observations never enter them. Monthly data cannot establish intra-month timing: quarter-end spikes are only a proxy. See [temporal methodology](artifacts/reports/time_series_methodology.md).
+
+## Capacity and hiring scenarios
+
+Planning grain: **Team × Country × Product Class × Month**.
+
+- Backtest seasonal naive, three-month average and exponential smoothing; select by validation WAPE and report test MAE/RMSE/WAPE/sMAPE/bias.
+- Build configurable normalized workload from customer, transaction, city, product and distributor loads.
+- Estimate sustainable capacity from the 60th percentile of stable training rep-month workloads, not the historical maximum.
+- Allocate each active rep's **single FTE** across served units in proportion to latest workload. Allocations reconcile to 13 reps; overlapping headcounts are never summed as independent capacity.
+- Required FTE = forecast workload ÷ sustainable per-rep capacity. Gap = required FTE − allocated FTE.
+- Report cautious priority categories and scenario bounds, not hiring instructions. Bounds reflect forecast errors and historical capacity quantiles; they are not statistical confidence intervals.
+- Compare raw versus training-bound-winsorized workload estimates. Cleaning can suppress real growth, so this is sensitivity analysis, not a corrected truth.
+
+The forecast horizon is **May 2019**, not today. Germany supports 24 current unit scenarios; 24 Poland units are retained as ineligible due to stale data. Scenarios include demand +10%/+20%, add 1/2 FTE, capacity −10%, product-launch demand and an explicit net-zero donor/receiver reallocation.
+
+The base case assumes all 13 observed reps' capacity is available to the observed Germany scope. Missing Poland records do not verify that assumption: real cross-country assignments may consume part of their time. Validate available FTE before interpreting the modeled spare capacity.
+
+[Capacity results](artifacts/planning/hiring_need_by_business_unit.csv) · [Scenarios](artifacts/planning/hiring_scenarios.csv) · [Forecast backtests](artifacts/planning/forecast_metrics.csv) · [Methodology](artifacts/reports/hiring_need_methodology.md)
+
+## Dashboard
+
+The existing Streamlit application now offers a separate **Real commercial extension** workspace:
+
+Executive overview · Model benchmark · Anomaly investigation · Time-series view · Field-force planning and interactive scenarios · Governance/limitations.
+
+The original synthetic dashboard remains accessible with a prominent legacy warning.
+
+## Reproduce
+
+From the repository root in PowerShell:
 
 ```powershell
 py -3.10 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 python -m pip install -e . --no-deps
-python run_pipeline.py --config configs\config.yaml
-python -m pytest -q
+# Place your authorized source CSV at data/raw/pharma-data.csv, or pass --input.
+python run_extended_benchmark.py --input data/raw/pharma-data.csv --config configs/config.yaml
+python -m pytest -q --junitxml=artifacts/reports/extended_tests.xml
 streamlit run app.py
 ```
 
-To use a provided CSV explicitly:
+To extract the supplied ZIP once: `Expand-Archive -LiteralPath 'C:\path\archive (1).zip' -DestinationPath data/raw`. Do not overwrite another dataset unintentionally. Raw source data is not bundled in git. The [run metadata](artifacts/reports/extended_run_metadata.json) records its SHA-256, dimensions, exact periods, feature names, parameters, seed, versions, warnings and runtime. The pipeline refreshes the marked results table above from executed metrics.
 
-```powershell
-python run_pipeline.py --config configs\config.yaml --input C:\path\to\pharma_sales.csv
-```
+## Important outputs
 
-Common column aliases are adapted by name. Missing optional organizational/context fields are documented and defaulted; the original input is never overwritten.
-
-## Dashboard
-
-`app.py` is a read-only Streamlit prototype that loads the generated artifacts without retraining. It includes:
-
-- executive KPIs and weighted model outcome;
-- country, city, territory, team, and manager filters with a geographic risk map;
-- product/class/channel/sub-channel views;
-- K-Means versus DBSCAN benchmark details;
-- cluster profiles, PCA, and derived business interpretations;
-- a ranked rep/product/month investigation queue with top drivers and CSV export;
-- methodology, provenance, limitations, and governance guardrails.
-
-## Key outputs
-
-| Path | Purpose |
+| Location | Contents |
 |---|---|
-| `data/synthetic/fallback_pharma_sales.csv` | Explicit source-like fallback; never represented as provided data |
-| `data/processed/rep_mapping.csv` | Deterministic customer/territory/team/manager-to-rep mapping |
-| `data/processed/analytical_dataset.csv` | Enriched, injected, feature-engineered analytical rows |
-| `data/processed/scored_observations.csv` | Both model clusters/scores/flags, selected score, PCA, and explanations |
-| `data/processed/rep_risk_summary.csv` | One highest-risk record plus aggregates per representative |
-| `artifacts/metrics/clustering_benchmark.csv` | Requested Metric × K-Means × DBSCAN benchmark |
-| `artifacts/metrics/clustering_benchmark_long.csv` | Every tested clustering configuration |
-| `artifacts/metrics/anomaly_metrics.csv` | Confusion, ROC/PR, and threshold metrics |
-| `artifacts/metrics/ranking_metrics.csv` | Precision, recall, and lift at 1%, 5%, and 10% |
-| `artifacts/metrics/cluster_profiles.csv` | Actual cluster statistics and derived interpretations |
-| `artifacts/models/` | Fitted preprocessor and final model objects |
-| `artifacts/plots/` | All 20 requested diagnostic/business plots |
-| `artifacts/reports/anomaly_investigations.csv` | Ranked high-risk observation queue with drivers |
-| `artifacts/reports/kmeans_distance_validation.json` | Executed Euclidean/manual/sklearn/inertia reconciliation evidence |
-| `notebooks/clustering_benchmark.ipynb` | Lightweight artifact-review notebook |
+| `data/processed/analytical_dataset.csv` | Clean real commercial + DEMO incentive/features |
+| `data/processed/controlled_benchmark_dataset.csv` | Separate injected evaluation copy |
+| `data/processed/*scores_long.csv` | Common score contract for both populations |
+| `data/processed/scored_observations_all_models.csv` | Wide controlled benchmark scores and drivers |
+| `data/processed/*time_series_scores.csv` | Prior-only temporal explanations |
+| `artifacts/metrics/` | Final/validation metrics, type/severity recall, sensitivity, correlations, overlap and selection contributions |
+| `artifacts/reports/*investigation_queue.csv` | Clean and controlled review queues |
+| `artifacts/reports/*all_feature_errors.npz` | Complete aligned per-feature contributions/errors, not only top drivers |
+| `artifacts/planning/` | Forecasts, capacity assumptions, eligible/ineligible units, FTE allocation and scenarios |
+| `artifacts/models/extended/` | Fitted models, preprocessor, calibrators, formula/scoring manifest and training information |
 
-## Repository layout
+New modules live in `src/field_rep_anomaly/`: `commercial.py`, `controlled_benchmark.py`, `temporal.py`, `extended_scoring.py`, `extended_pipeline.py`, `extended_dashboard.py`, advanced model wrappers and `planning/capacity.py`.
 
-```text
-field-rep-incentive-anomaly-benchmark/
-├── app.py                         # Streamlit dashboard
-├── run_pipeline.py                # CLI
-├── configs/config.yaml            # Data/model/selection settings
-├── data/{raw,synthetic,processed}/
-├── artifacts/{metrics,models,plots,reports}/
-├── notebooks/clustering_benchmark.ipynb
-├── src/field_rep_anomaly/         # Modular production code
-├── tests/                         # 21 fast unit tests
-└── docs/                          # Methodology, dictionary, discovery, future planning
-```
+Tests preserve all original cases and add schema/date/grain checks, label/future leakage protection, training-only preprocessing, score direction/calibration, model reconstruction/persistence, temporal/peer logic, formula safety, ranking/ensemble arithmetic, staffing allocation/scenarios, stale-country protection and every dashboard section.
 
-## Tests and reproducibility
+## Production gaps and next step
 
-The committed run passes **21/21 tests** with no warnings. Tests cover schema adaptation, deterministic generation/mapping, analytical-grain uniqueness, enrichment identities, 5–7% controlled injection, all anomaly types, leakage protection, finite features, StandardScaler/RobustScaler/clipping, exact K-Means/Euclidean distance identities, common model interfaces, scoring bounds/contributions, hand-checked evaluation metrics, cluster-profile reconciliation, and configuration weights.
+For incentive review: actual payouts, targets/quotas, compensation rules, adjustment approvals, calls/activity, territory assignments, working days/leave, approved exceptions and adjudicated review outcomes.
 
-The source-like fallback SHA-256 is `583fd210513b096ddaba101fc256f52288838fc720241ccdbad28d99f910de71`. Re-running with the same dependencies, configuration, and seed reproduces the source data, mapping, enrichment, labels, and model results; measured runtimes can vary by hardware.
+For capacity: customer/HCP potential, required call frequency, territory boundaries, travel times, vacancies, tenure, working capacity, hiring cost, ramp-up time, launches and access restrictions.
 
-## Limitations and safe use
-
-- An anomaly is a prioritization signal, not a determination of wrongdoing or payout error.
-- The fallback and rep identities are synthetic. Results do not describe real employees, customers, or territories.
-- Metrics against designed anomalies can be optimistic and depend on injection realism.
-- Selection against those same synthetic labels is demo benchmarking, not external validation.
-- Peer benchmarks depend on cohort size and the available organizational hierarchy.
-- DBSCAN is deterministic for fixed data/parameters, but density results remain scale- and `eps`-sensitive; the persisted wrapper documents its approximate nearest-core out-of-sample assignment.
-- Before production use, add governed source controls, temporal validation, review outcomes, drift monitoring, access controls, human escalation rules, and bias/privacy assessment.
-
-Clustering alone must **not** determine sales-force hiring. The reusable path toward territory opportunity, workload, capacity, forecasting, optimization, scenario simulation, and geographic allocation is documented in [future_sales_force_planning.md](docs/future_sales_force_planning.md).
-
-Further detail: [methodology.md](docs/methodology.md) · [data_dictionary.md](docs/data_dictionary.md) · [executed benchmark summary](artifacts/reports/executed_benchmark_summary.md)
+Next: validate the coverage discontinuity and workload assumptions with a commercial stakeholder, then replace DEMO incentives with governed actual records and evaluate against independently reviewed cases. [Production data gaps](artifacts/reports/production_data_gaps.md)

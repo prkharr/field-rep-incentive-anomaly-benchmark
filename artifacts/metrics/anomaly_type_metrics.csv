@@ -1,0 +1,385 @@
+model,grouping,value,support,captured_at_5pct,recall_at_5pct
+K-Means,anomaly_type,payout_spike,1,0,0.0
+K-Means,anomaly_type,payout_reduction,1,0,0.0
+K-Means,anomaly_type,payout_mismatch,1,1,1.0
+K-Means,anomaly_type,adjustment_anomaly,1,0,0.0
+K-Means,anomaly_type,sales_spike,1,0,0.0
+K-Means,anomaly_type,quantity_spike,1,0,0.0
+K-Means,anomaly_type,quantity_mismatch,1,0,0.0
+K-Means,anomaly_type,price_anomaly,1,0,0.0
+K-Means,anomaly_type,customer_burst,1,1,1.0
+K-Means,anomaly_type,customer_collapse,1,0,0.0
+K-Means,anomaly_type,product_mix_shift,1,0,0.0
+K-Means,anomaly_type,distributor_shift,1,0,0.0
+K-Means,anomaly_type,geographic_change,1,0,0.0
+K-Means,anomaly_type,peer_divergence,1,0,0.0
+K-Means,anomaly_type,inactivity_burst,2,2,1.0
+K-Means,anomaly_type,upward_level_shift,2,0,0.0
+K-Means,anomaly_type,downward_level_shift,0,0,
+K-Means,anomaly_type,end_period_spike,1,0,0.0
+K-Means,severity,low,7,0,0.0
+K-Means,severity,medium,6,0,0.0
+K-Means,severity,high,6,4,0.6666666666666666
+K-Means,business_family,payout spike,1,0,0.0
+K-Means,business_family,payout mismatch,2,1,0.5
+K-Means,business_family,adjustment anomaly,1,0,0.0
+K-Means,business_family,sales spike,1,0,0.0
+K-Means,business_family,quantity mismatch,3,0,0.0
+K-Means,business_family,customer shift,2,1,0.5
+K-Means,business_family,product-mix shift,1,0,0.0
+K-Means,business_family,peer deviation,1,0,0.0
+K-Means,business_family,temporal spike,3,2,0.6666666666666666
+K-Means,business_family,level shift,2,0,0.0
+K-Means,business_family,trend break,2,0,0.0
+DBSCAN,anomaly_type,payout_spike,1,1,1.0
+DBSCAN,anomaly_type,payout_reduction,1,0,0.0
+DBSCAN,anomaly_type,payout_mismatch,1,1,1.0
+DBSCAN,anomaly_type,adjustment_anomaly,1,1,1.0
+DBSCAN,anomaly_type,sales_spike,1,0,0.0
+DBSCAN,anomaly_type,quantity_spike,1,0,0.0
+DBSCAN,anomaly_type,quantity_mismatch,1,0,0.0
+DBSCAN,anomaly_type,price_anomaly,1,0,0.0
+DBSCAN,anomaly_type,customer_burst,1,1,1.0
+DBSCAN,anomaly_type,customer_collapse,1,0,0.0
+DBSCAN,anomaly_type,product_mix_shift,1,0,0.0
+DBSCAN,anomaly_type,distributor_shift,1,0,0.0
+DBSCAN,anomaly_type,geographic_change,1,0,0.0
+DBSCAN,anomaly_type,peer_divergence,1,0,0.0
+DBSCAN,anomaly_type,inactivity_burst,2,2,1.0
+DBSCAN,anomaly_type,upward_level_shift,2,0,0.0
+DBSCAN,anomaly_type,downward_level_shift,0,0,
+DBSCAN,anomaly_type,end_period_spike,1,0,0.0
+DBSCAN,severity,low,7,2,0.2857142857142857
+DBSCAN,severity,medium,6,0,0.0
+DBSCAN,severity,high,6,4,0.6666666666666666
+DBSCAN,business_family,payout spike,1,1,1.0
+DBSCAN,business_family,payout mismatch,2,1,0.5
+DBSCAN,business_family,adjustment anomaly,1,1,1.0
+DBSCAN,business_family,sales spike,1,0,0.0
+DBSCAN,business_family,quantity mismatch,3,0,0.0
+DBSCAN,business_family,customer shift,2,1,0.5
+DBSCAN,business_family,product-mix shift,1,0,0.0
+DBSCAN,business_family,peer deviation,1,0,0.0
+DBSCAN,business_family,temporal spike,3,2,0.6666666666666666
+DBSCAN,business_family,level shift,2,0,0.0
+DBSCAN,business_family,trend break,2,0,0.0
+Isolation Forest,anomaly_type,payout_spike,1,0,0.0
+Isolation Forest,anomaly_type,payout_reduction,1,0,0.0
+Isolation Forest,anomaly_type,payout_mismatch,1,0,0.0
+Isolation Forest,anomaly_type,adjustment_anomaly,1,0,0.0
+Isolation Forest,anomaly_type,sales_spike,1,1,1.0
+Isolation Forest,anomaly_type,quantity_spike,1,0,0.0
+Isolation Forest,anomaly_type,quantity_mismatch,1,0,0.0
+Isolation Forest,anomaly_type,price_anomaly,1,0,0.0
+Isolation Forest,anomaly_type,customer_burst,1,0,0.0
+Isolation Forest,anomaly_type,customer_collapse,1,0,0.0
+Isolation Forest,anomaly_type,product_mix_shift,1,0,0.0
+Isolation Forest,anomaly_type,distributor_shift,1,0,0.0
+Isolation Forest,anomaly_type,geographic_change,1,0,0.0
+Isolation Forest,anomaly_type,peer_divergence,1,0,0.0
+Isolation Forest,anomaly_type,inactivity_burst,2,0,0.0
+Isolation Forest,anomaly_type,upward_level_shift,2,0,0.0
+Isolation Forest,anomaly_type,downward_level_shift,0,0,
+Isolation Forest,anomaly_type,end_period_spike,1,1,1.0
+Isolation Forest,severity,low,7,0,0.0
+Isolation Forest,severity,medium,6,2,0.3333333333333333
+Isolation Forest,severity,high,6,0,0.0
+Isolation Forest,business_family,payout spike,1,0,0.0
+Isolation Forest,business_family,payout mismatch,2,0,0.0
+Isolation Forest,business_family,adjustment anomaly,1,0,0.0
+Isolation Forest,business_family,sales spike,1,1,1.0
+Isolation Forest,business_family,quantity mismatch,3,0,0.0
+Isolation Forest,business_family,customer shift,2,0,0.0
+Isolation Forest,business_family,product-mix shift,1,0,0.0
+Isolation Forest,business_family,peer deviation,1,0,0.0
+Isolation Forest,business_family,temporal spike,3,1,0.3333333333333333
+Isolation Forest,business_family,level shift,2,0,0.0
+Isolation Forest,business_family,trend break,2,0,0.0
+Autoencoder,anomaly_type,payout_spike,1,1,1.0
+Autoencoder,anomaly_type,payout_reduction,1,1,1.0
+Autoencoder,anomaly_type,payout_mismatch,1,1,1.0
+Autoencoder,anomaly_type,adjustment_anomaly,1,1,1.0
+Autoencoder,anomaly_type,sales_spike,1,0,0.0
+Autoencoder,anomaly_type,quantity_spike,1,1,1.0
+Autoencoder,anomaly_type,quantity_mismatch,1,0,0.0
+Autoencoder,anomaly_type,price_anomaly,1,0,0.0
+Autoencoder,anomaly_type,customer_burst,1,1,1.0
+Autoencoder,anomaly_type,customer_collapse,1,0,0.0
+Autoencoder,anomaly_type,product_mix_shift,1,0,0.0
+Autoencoder,anomaly_type,distributor_shift,1,0,0.0
+Autoencoder,anomaly_type,geographic_change,1,0,0.0
+Autoencoder,anomaly_type,peer_divergence,1,0,0.0
+Autoencoder,anomaly_type,inactivity_burst,2,2,1.0
+Autoencoder,anomaly_type,upward_level_shift,2,0,0.0
+Autoencoder,anomaly_type,downward_level_shift,0,0,
+Autoencoder,anomaly_type,end_period_spike,1,0,0.0
+Autoencoder,severity,low,7,2,0.2857142857142857
+Autoencoder,severity,medium,6,1,0.16666666666666666
+Autoencoder,severity,high,6,5,0.8333333333333334
+Autoencoder,business_family,payout spike,1,1,1.0
+Autoencoder,business_family,payout mismatch,2,2,1.0
+Autoencoder,business_family,adjustment anomaly,1,1,1.0
+Autoencoder,business_family,sales spike,1,0,0.0
+Autoencoder,business_family,quantity mismatch,3,1,0.3333333333333333
+Autoencoder,business_family,customer shift,2,1,0.5
+Autoencoder,business_family,product-mix shift,1,0,0.0
+Autoencoder,business_family,peer deviation,1,0,0.0
+Autoencoder,business_family,temporal spike,3,2,0.6666666666666666
+Autoencoder,business_family,level shift,2,0,0.0
+Autoencoder,business_family,trend break,2,0,0.0
+PCA Reconstruction,anomaly_type,payout_spike,1,1,1.0
+PCA Reconstruction,anomaly_type,payout_reduction,1,1,1.0
+PCA Reconstruction,anomaly_type,payout_mismatch,1,1,1.0
+PCA Reconstruction,anomaly_type,adjustment_anomaly,1,1,1.0
+PCA Reconstruction,anomaly_type,sales_spike,1,0,0.0
+PCA Reconstruction,anomaly_type,quantity_spike,1,0,0.0
+PCA Reconstruction,anomaly_type,quantity_mismatch,1,0,0.0
+PCA Reconstruction,anomaly_type,price_anomaly,1,0,0.0
+PCA Reconstruction,anomaly_type,customer_burst,1,1,1.0
+PCA Reconstruction,anomaly_type,customer_collapse,1,0,0.0
+PCA Reconstruction,anomaly_type,product_mix_shift,1,0,0.0
+PCA Reconstruction,anomaly_type,distributor_shift,1,0,0.0
+PCA Reconstruction,anomaly_type,geographic_change,1,0,0.0
+PCA Reconstruction,anomaly_type,peer_divergence,1,0,0.0
+PCA Reconstruction,anomaly_type,inactivity_burst,2,2,1.0
+PCA Reconstruction,anomaly_type,upward_level_shift,2,0,0.0
+PCA Reconstruction,anomaly_type,downward_level_shift,0,0,
+PCA Reconstruction,anomaly_type,end_period_spike,1,1,1.0
+PCA Reconstruction,severity,low,7,2,0.2857142857142857
+PCA Reconstruction,severity,medium,6,2,0.3333333333333333
+PCA Reconstruction,severity,high,6,4,0.6666666666666666
+PCA Reconstruction,business_family,payout spike,1,1,1.0
+PCA Reconstruction,business_family,payout mismatch,2,2,1.0
+PCA Reconstruction,business_family,adjustment anomaly,1,1,1.0
+PCA Reconstruction,business_family,sales spike,1,0,0.0
+PCA Reconstruction,business_family,quantity mismatch,3,0,0.0
+PCA Reconstruction,business_family,customer shift,2,1,0.5
+PCA Reconstruction,business_family,product-mix shift,1,0,0.0
+PCA Reconstruction,business_family,peer deviation,1,0,0.0
+PCA Reconstruction,business_family,temporal spike,3,3,1.0
+PCA Reconstruction,business_family,level shift,2,0,0.0
+PCA Reconstruction,business_family,trend break,2,0,0.0
+Rolling Residual,anomaly_type,payout_spike,1,1,1.0
+Rolling Residual,anomaly_type,payout_reduction,1,0,0.0
+Rolling Residual,anomaly_type,payout_mismatch,1,1,1.0
+Rolling Residual,anomaly_type,adjustment_anomaly,1,0,0.0
+Rolling Residual,anomaly_type,sales_spike,1,0,0.0
+Rolling Residual,anomaly_type,quantity_spike,1,0,0.0
+Rolling Residual,anomaly_type,quantity_mismatch,1,0,0.0
+Rolling Residual,anomaly_type,price_anomaly,1,0,0.0
+Rolling Residual,anomaly_type,customer_burst,1,0,0.0
+Rolling Residual,anomaly_type,customer_collapse,1,0,0.0
+Rolling Residual,anomaly_type,product_mix_shift,1,0,0.0
+Rolling Residual,anomaly_type,distributor_shift,1,0,0.0
+Rolling Residual,anomaly_type,geographic_change,1,0,0.0
+Rolling Residual,anomaly_type,peer_divergence,1,0,0.0
+Rolling Residual,anomaly_type,inactivity_burst,2,1,0.5
+Rolling Residual,anomaly_type,upward_level_shift,2,0,0.0
+Rolling Residual,anomaly_type,downward_level_shift,0,0,
+Rolling Residual,anomaly_type,end_period_spike,1,0,0.0
+Rolling Residual,severity,low,7,1,0.14285714285714285
+Rolling Residual,severity,medium,6,0,0.0
+Rolling Residual,severity,high,6,2,0.3333333333333333
+Rolling Residual,business_family,payout spike,1,1,1.0
+Rolling Residual,business_family,payout mismatch,2,1,0.5
+Rolling Residual,business_family,adjustment anomaly,1,0,0.0
+Rolling Residual,business_family,sales spike,1,0,0.0
+Rolling Residual,business_family,quantity mismatch,3,0,0.0
+Rolling Residual,business_family,customer shift,2,0,0.0
+Rolling Residual,business_family,product-mix shift,1,0,0.0
+Rolling Residual,business_family,peer deviation,1,0,0.0
+Rolling Residual,business_family,temporal spike,3,1,0.3333333333333333
+Rolling Residual,business_family,level shift,2,0,0.0
+Rolling Residual,business_family,trend break,2,0,0.0
+EWMA Residual,anomaly_type,payout_spike,1,1,1.0
+EWMA Residual,anomaly_type,payout_reduction,1,0,0.0
+EWMA Residual,anomaly_type,payout_mismatch,1,1,1.0
+EWMA Residual,anomaly_type,adjustment_anomaly,1,0,0.0
+EWMA Residual,anomaly_type,sales_spike,1,0,0.0
+EWMA Residual,anomaly_type,quantity_spike,1,0,0.0
+EWMA Residual,anomaly_type,quantity_mismatch,1,0,0.0
+EWMA Residual,anomaly_type,price_anomaly,1,0,0.0
+EWMA Residual,anomaly_type,customer_burst,1,0,0.0
+EWMA Residual,anomaly_type,customer_collapse,1,0,0.0
+EWMA Residual,anomaly_type,product_mix_shift,1,0,0.0
+EWMA Residual,anomaly_type,distributor_shift,1,0,0.0
+EWMA Residual,anomaly_type,geographic_change,1,0,0.0
+EWMA Residual,anomaly_type,peer_divergence,1,0,0.0
+EWMA Residual,anomaly_type,inactivity_burst,2,1,0.5
+EWMA Residual,anomaly_type,upward_level_shift,2,0,0.0
+EWMA Residual,anomaly_type,downward_level_shift,0,0,
+EWMA Residual,anomaly_type,end_period_spike,1,0,0.0
+EWMA Residual,severity,low,7,1,0.14285714285714285
+EWMA Residual,severity,medium,6,0,0.0
+EWMA Residual,severity,high,6,2,0.3333333333333333
+EWMA Residual,business_family,payout spike,1,1,1.0
+EWMA Residual,business_family,payout mismatch,2,1,0.5
+EWMA Residual,business_family,adjustment anomaly,1,0,0.0
+EWMA Residual,business_family,sales spike,1,0,0.0
+EWMA Residual,business_family,quantity mismatch,3,0,0.0
+EWMA Residual,business_family,customer shift,2,0,0.0
+EWMA Residual,business_family,product-mix shift,1,0,0.0
+EWMA Residual,business_family,peer deviation,1,0,0.0
+EWMA Residual,business_family,temporal spike,3,1,0.3333333333333333
+EWMA Residual,business_family,level shift,2,0,0.0
+EWMA Residual,business_family,trend break,2,0,0.0
+Seasonal Residual,anomaly_type,payout_spike,1,0,0.0
+Seasonal Residual,anomaly_type,payout_reduction,1,0,0.0
+Seasonal Residual,anomaly_type,payout_mismatch,1,1,1.0
+Seasonal Residual,anomaly_type,adjustment_anomaly,1,0,0.0
+Seasonal Residual,anomaly_type,sales_spike,1,0,0.0
+Seasonal Residual,anomaly_type,quantity_spike,1,0,0.0
+Seasonal Residual,anomaly_type,quantity_mismatch,1,0,0.0
+Seasonal Residual,anomaly_type,price_anomaly,1,0,0.0
+Seasonal Residual,anomaly_type,customer_burst,1,0,0.0
+Seasonal Residual,anomaly_type,customer_collapse,1,0,0.0
+Seasonal Residual,anomaly_type,product_mix_shift,1,0,0.0
+Seasonal Residual,anomaly_type,distributor_shift,1,0,0.0
+Seasonal Residual,anomaly_type,geographic_change,1,0,0.0
+Seasonal Residual,anomaly_type,peer_divergence,1,0,0.0
+Seasonal Residual,anomaly_type,inactivity_burst,2,1,0.5
+Seasonal Residual,anomaly_type,upward_level_shift,2,0,0.0
+Seasonal Residual,anomaly_type,downward_level_shift,0,0,
+Seasonal Residual,anomaly_type,end_period_spike,1,0,0.0
+Seasonal Residual,severity,low,7,0,0.0
+Seasonal Residual,severity,medium,6,0,0.0
+Seasonal Residual,severity,high,6,2,0.3333333333333333
+Seasonal Residual,business_family,payout spike,1,0,0.0
+Seasonal Residual,business_family,payout mismatch,2,1,0.5
+Seasonal Residual,business_family,adjustment anomaly,1,0,0.0
+Seasonal Residual,business_family,sales spike,1,0,0.0
+Seasonal Residual,business_family,quantity mismatch,3,0,0.0
+Seasonal Residual,business_family,customer shift,2,0,0.0
+Seasonal Residual,business_family,product-mix shift,1,0,0.0
+Seasonal Residual,business_family,peer deviation,1,0,0.0
+Seasonal Residual,business_family,temporal spike,3,1,0.3333333333333333
+Seasonal Residual,business_family,level shift,2,0,0.0
+Seasonal Residual,business_family,trend break,2,0,0.0
+Change-Point / Level Shift,anomaly_type,payout_spike,1,0,0.0
+Change-Point / Level Shift,anomaly_type,payout_reduction,1,0,0.0
+Change-Point / Level Shift,anomaly_type,payout_mismatch,1,0,0.0
+Change-Point / Level Shift,anomaly_type,adjustment_anomaly,1,0,0.0
+Change-Point / Level Shift,anomaly_type,sales_spike,1,0,0.0
+Change-Point / Level Shift,anomaly_type,quantity_spike,1,0,0.0
+Change-Point / Level Shift,anomaly_type,quantity_mismatch,1,0,0.0
+Change-Point / Level Shift,anomaly_type,price_anomaly,1,0,0.0
+Change-Point / Level Shift,anomaly_type,customer_burst,1,0,0.0
+Change-Point / Level Shift,anomaly_type,customer_collapse,1,0,0.0
+Change-Point / Level Shift,anomaly_type,product_mix_shift,1,0,0.0
+Change-Point / Level Shift,anomaly_type,distributor_shift,1,0,0.0
+Change-Point / Level Shift,anomaly_type,geographic_change,1,0,0.0
+Change-Point / Level Shift,anomaly_type,peer_divergence,1,0,0.0
+Change-Point / Level Shift,anomaly_type,inactivity_burst,2,0,0.0
+Change-Point / Level Shift,anomaly_type,upward_level_shift,2,0,0.0
+Change-Point / Level Shift,anomaly_type,downward_level_shift,0,0,
+Change-Point / Level Shift,anomaly_type,end_period_spike,1,0,0.0
+Change-Point / Level Shift,severity,low,7,0,0.0
+Change-Point / Level Shift,severity,medium,6,0,0.0
+Change-Point / Level Shift,severity,high,6,0,0.0
+Change-Point / Level Shift,business_family,payout spike,1,0,0.0
+Change-Point / Level Shift,business_family,payout mismatch,2,0,0.0
+Change-Point / Level Shift,business_family,adjustment anomaly,1,0,0.0
+Change-Point / Level Shift,business_family,sales spike,1,0,0.0
+Change-Point / Level Shift,business_family,quantity mismatch,3,0,0.0
+Change-Point / Level Shift,business_family,customer shift,2,0,0.0
+Change-Point / Level Shift,business_family,product-mix shift,1,0,0.0
+Change-Point / Level Shift,business_family,peer deviation,1,0,0.0
+Change-Point / Level Shift,business_family,temporal spike,3,0,0.0
+Change-Point / Level Shift,business_family,level shift,2,0,0.0
+Change-Point / Level Shift,business_family,trend break,2,0,0.0
+Robust Peer Baseline,anomaly_type,payout_spike,1,0,0.0
+Robust Peer Baseline,anomaly_type,payout_reduction,1,0,0.0
+Robust Peer Baseline,anomaly_type,payout_mismatch,1,0,0.0
+Robust Peer Baseline,anomaly_type,adjustment_anomaly,1,0,0.0
+Robust Peer Baseline,anomaly_type,sales_spike,1,0,0.0
+Robust Peer Baseline,anomaly_type,quantity_spike,1,0,0.0
+Robust Peer Baseline,anomaly_type,quantity_mismatch,1,0,0.0
+Robust Peer Baseline,anomaly_type,price_anomaly,1,0,0.0
+Robust Peer Baseline,anomaly_type,customer_burst,1,1,1.0
+Robust Peer Baseline,anomaly_type,customer_collapse,1,0,0.0
+Robust Peer Baseline,anomaly_type,product_mix_shift,1,0,0.0
+Robust Peer Baseline,anomaly_type,distributor_shift,1,0,0.0
+Robust Peer Baseline,anomaly_type,geographic_change,1,0,0.0
+Robust Peer Baseline,anomaly_type,peer_divergence,1,0,0.0
+Robust Peer Baseline,anomaly_type,inactivity_burst,2,1,0.5
+Robust Peer Baseline,anomaly_type,upward_level_shift,2,0,0.0
+Robust Peer Baseline,anomaly_type,downward_level_shift,0,0,
+Robust Peer Baseline,anomaly_type,end_period_spike,1,1,1.0
+Robust Peer Baseline,severity,low,7,0,0.0
+Robust Peer Baseline,severity,medium,6,1,0.16666666666666666
+Robust Peer Baseline,severity,high,6,2,0.3333333333333333
+Robust Peer Baseline,business_family,payout spike,1,0,0.0
+Robust Peer Baseline,business_family,payout mismatch,2,0,0.0
+Robust Peer Baseline,business_family,adjustment anomaly,1,0,0.0
+Robust Peer Baseline,business_family,sales spike,1,0,0.0
+Robust Peer Baseline,business_family,quantity mismatch,3,0,0.0
+Robust Peer Baseline,business_family,customer shift,2,1,0.5
+Robust Peer Baseline,business_family,product-mix shift,1,0,0.0
+Robust Peer Baseline,business_family,peer deviation,1,0,0.0
+Robust Peer Baseline,business_family,temporal spike,3,2,0.6666666666666666
+Robust Peer Baseline,business_family,level shift,2,0,0.0
+Robust Peer Baseline,business_family,trend break,2,0,0.0
+Business Rules,anomaly_type,payout_spike,1,0,0.0
+Business Rules,anomaly_type,payout_reduction,1,0,0.0
+Business Rules,anomaly_type,payout_mismatch,1,1,1.0
+Business Rules,anomaly_type,adjustment_anomaly,1,0,0.0
+Business Rules,anomaly_type,sales_spike,1,0,0.0
+Business Rules,anomaly_type,quantity_spike,1,1,1.0
+Business Rules,anomaly_type,quantity_mismatch,1,0,0.0
+Business Rules,anomaly_type,price_anomaly,1,0,0.0
+Business Rules,anomaly_type,customer_burst,1,0,0.0
+Business Rules,anomaly_type,customer_collapse,1,1,1.0
+Business Rules,anomaly_type,product_mix_shift,1,0,0.0
+Business Rules,anomaly_type,distributor_shift,1,0,0.0
+Business Rules,anomaly_type,geographic_change,1,0,0.0
+Business Rules,anomaly_type,peer_divergence,1,0,0.0
+Business Rules,anomaly_type,inactivity_burst,2,1,0.5
+Business Rules,anomaly_type,upward_level_shift,2,0,0.0
+Business Rules,anomaly_type,downward_level_shift,0,0,
+Business Rules,anomaly_type,end_period_spike,1,0,0.0
+Business Rules,severity,low,7,1,0.14285714285714285
+Business Rules,severity,medium,6,0,0.0
+Business Rules,severity,high,6,3,0.5
+Business Rules,business_family,payout spike,1,0,0.0
+Business Rules,business_family,payout mismatch,2,1,0.5
+Business Rules,business_family,adjustment anomaly,1,0,0.0
+Business Rules,business_family,sales spike,1,0,0.0
+Business Rules,business_family,quantity mismatch,3,1,0.3333333333333333
+Business Rules,business_family,customer shift,2,1,0.5
+Business Rules,business_family,product-mix shift,1,0,0.0
+Business Rules,business_family,peer deviation,1,0,0.0
+Business Rules,business_family,temporal spike,3,1,0.3333333333333333
+Business Rules,business_family,level shift,2,0,0.0
+Business Rules,business_family,trend break,2,0,0.0
+Best Ensemble,anomaly_type,payout_spike,1,1,1.0
+Best Ensemble,anomaly_type,payout_reduction,1,1,1.0
+Best Ensemble,anomaly_type,payout_mismatch,1,1,1.0
+Best Ensemble,anomaly_type,adjustment_anomaly,1,1,1.0
+Best Ensemble,anomaly_type,sales_spike,1,1,1.0
+Best Ensemble,anomaly_type,quantity_spike,1,0,0.0
+Best Ensemble,anomaly_type,quantity_mismatch,1,0,0.0
+Best Ensemble,anomaly_type,price_anomaly,1,0,0.0
+Best Ensemble,anomaly_type,customer_burst,1,1,1.0
+Best Ensemble,anomaly_type,customer_collapse,1,0,0.0
+Best Ensemble,anomaly_type,product_mix_shift,1,0,0.0
+Best Ensemble,anomaly_type,distributor_shift,1,0,0.0
+Best Ensemble,anomaly_type,geographic_change,1,0,0.0
+Best Ensemble,anomaly_type,peer_divergence,1,0,0.0
+Best Ensemble,anomaly_type,inactivity_burst,2,2,1.0
+Best Ensemble,anomaly_type,upward_level_shift,2,0,0.0
+Best Ensemble,anomaly_type,downward_level_shift,0,0,
+Best Ensemble,anomaly_type,end_period_spike,1,1,1.0
+Best Ensemble,severity,low,7,2,0.2857142857142857
+Best Ensemble,severity,medium,6,3,0.5
+Best Ensemble,severity,high,6,4,0.6666666666666666
+Best Ensemble,business_family,payout spike,1,1,1.0
+Best Ensemble,business_family,payout mismatch,2,2,1.0
+Best Ensemble,business_family,adjustment anomaly,1,1,1.0
+Best Ensemble,business_family,sales spike,1,1,1.0
+Best Ensemble,business_family,quantity mismatch,3,0,0.0
+Best Ensemble,business_family,customer shift,2,1,0.5
+Best Ensemble,business_family,product-mix shift,1,0,0.0
+Best Ensemble,business_family,peer deviation,1,0,0.0
+Best Ensemble,business_family,temporal spike,3,3,1.0
+Best Ensemble,business_family,level shift,2,0,0.0
+Best Ensemble,business_family,trend break,2,0,0.0

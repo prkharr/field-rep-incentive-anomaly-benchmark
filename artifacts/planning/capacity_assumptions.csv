@@ -1,0 +1,11 @@
+assumption,value,basis
+sustainable_capacity_per_rep,7.481691189885916,Training stable rep-month 60th percentile
+capacity_low,6.9817982442018955,"Training 40th percentile (scenario bound, not CI)"
+capacity_high,10.644280938429011,"Training 80th percentile (scenario bound, not CI)"
+stable_training_period_count,208.0,Absolute monthly workload growth <= configured limit
+stable_period_fallback,0.0,All training periods if fewer than 10 stable samples
+distinct_customers_scale,51.0,Training per-rep-unit median; weight=0.4
+transaction_count_scale,54.0,Training per-rep-unit median; weight=0.25
+distinct_cities_scale,51.0,Training per-rep-unit median; weight=0.15
+distinct_products_scale,29.0,Training per-rep-unit median; weight=0.1
+distributor_count_scale,7.0,Training per-rep-unit median; weight=0.1

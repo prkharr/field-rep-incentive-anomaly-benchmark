@@ -1,0 +1,49 @@
+team,country,product_class,raw_required_fte,cleaned_required_fte,cleaning_difference,cleaning_explanation
+Delta,Germany,Antibiotics,0.45173268932544836,0.4906383729230023,0.03890568359755389,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Alfa,Germany,Antimalarial,0.3494333225283596,0.3634369361067122,0.014003613578352555,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Delta,Germany,Antimalarial,0.45872755566813334,0.4835614666183849,0.02483391095025154,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Charlie,Germany,Analgesics,0.41988972657364937,0.4390917046637129,0.01920197809006352,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Bravo,Germany,Antipiretics,0.3492110838117142,0.3600327290852595,0.01082164527354537,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Charlie,Germany,Antipiretics,0.3388953218982479,0.3563963701494742,0.01750104825122625,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Delta,Germany,Analgesics,0.5584289364012285,0.5763088798347892,0.017879943433560752,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Bravo,Germany,Antibiotics,0.3314746230812911,0.34524971257437725,0.013775089493086158,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Delta,Germany,Mood Stabilizers,0.5813656496325081,0.598535641093211,0.017169991460702812,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Charlie,Germany,Mood Stabilizers,0.4273152680660976,0.44300339452949905,0.015688126463401467,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Alfa,Germany,Antibiotics,0.35942536604986186,0.3814100309940147,0.021984664944152854,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Delta,Germany,Antipiretics,0.46180956573370163,0.4905875056141981,0.02877793988049649,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Bravo,Germany,Antiseptics,0.4715722048241579,0.48712511755425886,0.015552912730100977,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Charlie,Germany,Antimalarial,0.3567132280898428,0.36123542518750407,0.004522197097661273,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Alfa,Germany,Analgesics,0.40226086038530423,0.41890968478751167,0.016648824402207472,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Alfa,Germany,Antipiretics,0.34292877210369993,0.3533593326920021,0.010430560588302207,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Charlie,Germany,Antiseptics,0.47607012376496527,0.4863900662557614,0.010319942490796164,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Bravo,Germany,Analgesics,0.3958866311328949,0.40876406752643074,0.012877436393535856,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Alfa,Germany,Mood Stabilizers,0.42541538290004605,0.44854787512602584,0.02313249222597981,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Alfa,Germany,Antiseptics,0.46869195568642164,0.48839774158572613,0.01970578589930451,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Bravo,Germany,Mood Stabilizers,0.4144991098138151,0.4306961427973941,0.016197032983578954,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Charlie,Germany,Antibiotics,0.33708324371776693,0.3577325090481216,0.02064926533035467,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Bravo,Germany,Antimalarial,0.3487655504508188,0.3546796178236243,0.005914067372805488,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Delta,Germany,Antiseptics,0.6267935131674652,0.6449142264139536,0.018120713246488333,Workload winsorized to unit-specific TRAIN 5th/95th percentiles; capacity held fixed
+Alfa,Poland,Analgesics,,,,
+Alfa,Poland,Antibiotics,,,,
+Alfa,Poland,Antimalarial,,,,
+Alfa,Poland,Antipiretics,,,,
+Alfa,Poland,Antiseptics,,,,
+Alfa,Poland,Mood Stabilizers,,,,
+Bravo,Poland,Analgesics,,,,
+Bravo,Poland,Antibiotics,,,,
+Bravo,Poland,Antimalarial,,,,
+Bravo,Poland,Antipiretics,,,,
+Bravo,Poland,Antiseptics,,,,
+Bravo,Poland,Mood Stabilizers,,,,
+Charlie,Poland,Analgesics,,,,
+Charlie,Poland,Antibiotics,,,,
+Charlie,Poland,Antimalarial,,,,
+Charlie,Poland,Antipiretics,,,,
+Charlie,Poland,Antiseptics,,,,
+Charlie,Poland,Mood Stabilizers,,,,
+Delta,Poland,Analgesics,,,,
+Delta,Poland,Antibiotics,,,,
+Delta,Poland,Antimalarial,,,,
+Delta,Poland,Antipiretics,,,,
+Delta,Poland,Antiseptics,,,,
+Delta,Poland,Mood Stabilizers,,,,

@@ -12,7 +12,7 @@ import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import RobustScaler, StandardScaler
+from sklearn.preprocessing import RobustScaler, StandardScaler, FunctionTransformer
 
 from .feature_engineering import validate_model_features
 
@@ -46,9 +46,17 @@ class FittedPreprocessor:
         return np.asarray(self.pipeline.transform(frame[self.feature_names]), dtype=float)
 
 
+def signed_log1p(values):
+    """Monotone tail compression preserving signs and out-of-range ordering."""
+    values = np.asarray(values, dtype=float)
+    return np.sign(values) * np.log1p(np.abs(values))
+
+
 def build_preprocessor(settings: Mapping[str, Any]) -> Pipeline:
     """Build median-imputation, optional clipping, and configured scaling."""
     steps: list[tuple[str, Any]] = [("imputer", SimpleImputer(strategy="median"))]
+    if bool(settings.get('signed_log1p', False)):
+        steps.append(('signed_log1p', FunctionTransformer(signed_log1p)))
     if bool(settings.get("clip_outliers", False)):
         steps.append(
             (

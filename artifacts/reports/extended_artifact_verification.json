@@ -1,0 +1,20 @@
+{
+  "artifact_checks": "passed",
+  "source_sha256": "f77609eaa7700c964eee2f87a6bb1c75ca6263099969f7bc981fe6822f104cd3",
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "49",
+    "time": "17.224",
+    "timestamp": "2026-08-31T15:53:18.616392+05:30",
+    "hostname": "LAPTOP-JMHPDJTF"
+  },
+  "models": 12,
+  "test_rows_per_model": 312,
+  "eligible_planning_units": 24,
+  "stale_units_excluded": 24,
+  "plot_files_verified": 5,
+  "runtime_seconds": 126.59716950001894
+}

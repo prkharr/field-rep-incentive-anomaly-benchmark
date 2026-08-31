@@ -1,0 +1,7 @@
+{
+  "metric": "Euclidean L2 in TRAIN-fitted robust-scaled feature space",
+  "all_assigned_centroids_nearest": true,
+  "manual_max_error": 0.0,
+  "sklearn_max_error": 1.8340884366807586e-13,
+  "train_inertia_error": 1.4551915228366852e-11
+}

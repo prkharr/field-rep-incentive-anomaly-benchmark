@@ -1,0 +1,55 @@
+observation_id,representative,product_class,period,split,anomaly_type,severity,affected_feature,original_value,injected_value,seed
+obs_ff228098000f31a4,Daniel Gates,Mood Stabilizers,2018-09-01,validation,payout_spike,low,simulated_actual_payout,788.9832893709819,1262.3732629935712,42
+obs_d5bb39d965bf44e1,Alan Ray,Antiseptics,2018-08-01,validation,payout_reduction,medium,simulated_actual_payout,940.1157535446931,235.02893838617328,42
+obs_bda94eddac6e3229,Daniel Gates,Antimalarial,2018-10-01,validation,payout_mismatch,high,simulated_actual_payout,843.5793468939293,3374.317387575717,42
+obs_9a3b25c8db702217,Anne Wu,Mood Stabilizers,2018-08-01,validation,adjustment_anomaly,low,simulated_adjustment,0.0,827.4898520564681,42
+obs_9a3b25c8db702217,Anne Wu,Mood Stabilizers,2018-08-01,validation,adjustment_anomaly,low,simulated_actual_payout,1379.1497534274467,2206.6396054839147,42
+obs_ae7dda38a96ed030,Anne Wu,Antimalarial,2018-07-01,validation,sales_spike,medium,total_sales,2307691.0,5769227.5,42
+obs_49466129e0f7227a,Mary Gerrard,Antibiotics,2018-11-01,validation,quantity_spike,high,total_quantity,7558.0,30232.0,42
+obs_d44e23642ed4b765,Abigail Thompson,Antiseptics,2018-11-01,validation,quantity_mismatch,low,total_quantity,4586.0,2084.5454545454545,42
+obs_f4ef65b329725b1d,Jessica Smith,Antibiotics,2018-08-01,validation,price_anomaly,medium,average_price,434.3411764705882,1085.8529411764705,42
+obs_f4ef65b329725b1d,Jessica Smith,Antibiotics,2018-08-01,validation,price_anomaly,medium,median_price,448.0,1120.0,42
+obs_0f1d69367bdf1b0e,Daniel Gates,Analgesics,2018-08-01,validation,customer_burst,high,distinct_customers,100.0,400.0,42
+obs_cee5c1e4f3e8006e,Abigail Thompson,Antimalarial,2018-07-01,validation,customer_collapse,low,distinct_customers,79.0,36.0,42
+obs_55c330ed875989ab,Jimmy Grey,Mood Stabilizers,2018-10-01,validation,product_mix_shift,medium,product_concentration,0.09712007965394857,0.5937040358442769,42
+obs_0a579a3ef4551465,Morris Garcia,Antiseptics,2018-08-01,validation,distributor_shift,high,distributor_concentration,0.30402379521440487,0.8956035692821607,42
+obs_b47d8202048cc8bb,Steve Pepple,Antimalarial,2018-10-01,validation,geographic_change,low,distinct_cities,108.0,173.0,42
+obs_890c162e5617bff7,Abigail Thompson,Antimalarial,2018-12-01,validation,peer_divergence,medium,total_sales,1372466.0,3431165.0,42
+obs_5d8aea770b79e5ec,Stella Given,Analgesics,2018-07-01,validation,inactivity_burst,high,total_sales,3840935.0,192046.75,42
+obs_280bd9281188dddf,Stella Given,Analgesics,2018-08-01,validation,inactivity_burst,high,total_sales,2362982.0,16540874.0,42
+obs_81ac4aaa9d548179,Mary Gerrard,Analgesics,2018-08-01,validation,upward_level_shift,low,total_sales,2882162.0,4611459.2,42
+obs_9830d9d609b5684e,Mary Gerrard,Analgesics,2018-09-01,validation,upward_level_shift,low,total_sales,2714162.0,4342659.2,42
+obs_d3e759104ab317d1,Thompson Crawford,Antipiretics,2018-07-01,validation,downward_level_shift,medium,total_sales,3777805.0,944451.25,42
+obs_9cbb78a59c69d4a9,Thompson Crawford,Antipiretics,2018-08-01,validation,downward_level_shift,medium,total_sales,2465515.0,616378.75,42
+obs_2d0cae3b27e68c95,Jimmy Grey,Antibiotics,2018-12-01,validation,end_period_spike,high,total_sales,1395515.0,5582060.0,42
+obs_57f00a19cab0d769,Alan Ray,Antipiretics,2018-07-01,validation,payout_spike,low,simulated_actual_payout,2809.6466450875005,4495.434632140001,42
+obs_5490d0977481f5cc,Sheila Stones,Analgesics,2018-11-01,validation,payout_reduction,medium,simulated_actual_payout,563.5344447970449,140.88361119926122,42
+obs_67b00a0e4ea8af25,Stella Given,Antiseptics,2018-10-01,validation,payout_mismatch,high,simulated_actual_payout,2341.4647264395658,9365.858905758263,42
+obs_365429a5c5b577bf,Morris Garcia,Antipiretics,2018-08-01,validation,adjustment_anomaly,low,simulated_adjustment,0.0,398.7516918735128,42
+obs_365429a5c5b577bf,Morris Garcia,Antipiretics,2018-08-01,validation,adjustment_anomaly,low,simulated_actual_payout,664.5861531225214,1063.3378449960342,42
+obs_ef3b252342c829c8,Jimmy Grey,Analgesics,2018-07-01,validation,sales_spike,medium,total_sales,3081744.0,7704360.0,42
+obs_73bc6665a6add3d8,Sheila Stones,Antimalarial,2018-08-01,validation,quantity_spike,high,total_quantity,10473.0,41892.0,42
+obs_11c45d0687f2ab7e,Sheila Stones,Antimalarial,2018-10-01,validation,quantity_mismatch,low,total_quantity,10063.0,4574.090909090909,42
+obs_a64442afd0c679c5,Sheila Stones,Mood Stabilizers,2018-12-01,validation,price_anomaly,medium,average_price,366.0246913580247,915.0617283950618,42
+obs_a64442afd0c679c5,Sheila Stones,Mood Stabilizers,2018-12-01,validation,price_anomaly,medium,median_price,334.0,835.0,42
+obs_39c3c4016a1c8103,Anne Wu,Mood Stabilizers,2019-02-01,test,payout_spike,low,simulated_actual_payout,2699.67932469669,4319.486919514704,42
+obs_bbea40fafaf3160d,Anne Wu,Analgesics,2019-03-01,test,payout_reduction,medium,simulated_actual_payout,1555.4005962563201,388.85014906408003,42
+obs_c5a8d498671eed1d,Sheila Stones,Mood Stabilizers,2019-03-01,test,payout_mismatch,high,simulated_actual_payout,3264.6971906601198,13058.788762640479,42
+obs_8334eb12fadfda7a,Thompson Crawford,Mood Stabilizers,2019-03-01,test,adjustment_anomaly,low,simulated_adjustment,0.0,1615.7093115083148,42
+obs_8334eb12fadfda7a,Thompson Crawford,Mood Stabilizers,2019-03-01,test,adjustment_anomaly,low,simulated_actual_payout,2692.848852513858,4308.5581640221735,42
+obs_14c84c5373ab6e9f,Thompson Crawford,Mood Stabilizers,2019-01-01,test,sales_spike,medium,total_sales,2279008.0,5697520.0,42
+obs_26700eeab9c910eb,Thompson Crawford,Mood Stabilizers,2019-04-01,test,quantity_spike,high,total_quantity,6796.0,27184.0,42
+obs_544e87c9754de2a1,Stella Given,Analgesics,2019-03-01,test,quantity_mismatch,low,total_quantity,8480.0,3854.545454545454,42
+obs_6973de100a5d6b7b,Erica Jones,Mood Stabilizers,2019-02-01,test,price_anomaly,medium,average_price,405.2631578947368,1013.1578947368421,42
+obs_6973de100a5d6b7b,Erica Jones,Mood Stabilizers,2019-02-01,test,price_anomaly,medium,median_price,404.0,1010.0,42
+obs_9381de55942bf2ca,Abigail Thompson,Antipiretics,2019-01-01,test,customer_burst,high,distinct_customers,34.0,136.0,42
+obs_c02e50578eb8d285,Alan Ray,Antibiotics,2019-02-01,test,customer_collapse,low,distinct_customers,49.0,22.0,42
+obs_6dbf7453e066a433,Daniel Gates,Analgesics,2019-01-01,test,product_mix_shift,medium,product_concentration,0.20744873824774426,0.643351932211485,42
+obs_9ea6572debcf3e83,Anne Wu,Antimalarial,2019-01-01,test,distributor_shift,high,distributor_concentration,0.4325874931578507,0.9148881239736777,42
+obs_be5060a455d194a7,Abigail Thompson,Antiseptics,2019-02-01,test,geographic_change,low,distinct_cities,63.0,101.0,42
+obs_94a0c4eb8176a145,Erica Jones,Analgesics,2019-01-01,test,peer_divergence,medium,total_sales,669335.0,1673337.5,42
+obs_544200e66770d25d,Alan Ray,Antiseptics,2019-01-01,test,inactivity_burst,high,total_sales,1282539.0,64126.950000000004,42
+obs_6761f6d2bc1f430a,Alan Ray,Antiseptics,2019-02-01,test,inactivity_burst,high,total_sales,3327517.0,23292619.0,42
+obs_e3fe1d34540d0fcd,Thompson Crawford,Antimalarial,2019-03-01,test,upward_level_shift,low,total_sales,1030493.0,1648788.8,42
+obs_f1ab3b7b1b980f80,Thompson Crawford,Antimalarial,2019-04-01,test,upward_level_shift,low,total_sales,1231280.0,1970048.0,42
+obs_a3c1436f4a4dc5f8,Alan Ray,Analgesics,2019-03-01,test,end_period_spike,medium,total_sales,6542648.0,16356620.0,42

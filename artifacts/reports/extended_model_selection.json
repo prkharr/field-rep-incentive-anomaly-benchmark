@@ -1,0 +1,21 @@
+{
+  "best_temporal": "EWMA Residual",
+  "reconstruction_component": "PCA Reconstruction",
+  "dropped_correlated": [],
+  "best_single": "PCA Reconstruction",
+  "recommended_model": "PCA Reconstruction",
+  "ensemble_material_improvement": false,
+  "best_interpretable": "K-Means",
+  "validation_ensemble_recall_gain": -0.103448275862069,
+  "validation_ensemble_pr_auc_gain": -0.10146988192657502,
+  "selection_basis": "Validation ranking utility/stability; fixed material gains. Final TEST not used for selection.",
+  "ensemble_kind": "maximum",
+  "ensemble_weights": {
+    "Isolation Forest": 0.3,
+    "EWMA Residual": 0.2,
+    "Robust Peer Baseline": 0.2,
+    "PCA Reconstruction": 0.15,
+    "Business Rules": 0.15
+  },
+  "best_segmentation": "K-Means"
+}

@@ -1,0 +1,25 @@
+model,seed,score_correlation,top5_queue_overlap,runtime_seconds,method
+K-Means,43,0.9999062269189151,1.0,0.12068019999423996,refit TRAIN with different seed; score same validation
+DBSCAN,43,0.9999999999999998,1.0,0.05209159996593371,refit TRAIN with different seed; score same validation
+Isolation Forest,43,0.942799357098312,0.7916666666666666,0.29074289998970926,refit TRAIN with different seed; score same validation
+Autoencoder,43,0.9193578428772906,0.9166666666666666,3.0924560999847017,refit TRAIN with different seed; score same validation
+PCA Reconstruction,43,0.9999999999999998,1.0,0.013533400022424757,refit TRAIN with different seed; score same validation
+Rolling Residual,43,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+EWMA Residual,43,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Seasonal Residual,43,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Change-Point / Level Shift,43,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Robust Peer Baseline,43,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Business Rules,43,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Best Ensemble,43,0.9893316437788934,1.0,0.0,component seed refits; frozen calibration/weights
+K-Means,44,0.9998650182740438,0.9583333333333334,0.1567191999638453,refit TRAIN with different seed; score same validation
+DBSCAN,44,0.9999999999999998,1.0,0.05612169997766614,refit TRAIN with different seed; score same validation
+Isolation Forest,44,0.9321955064548307,0.7916666666666666,0.3519965000450611,refit TRAIN with different seed; score same validation
+Autoencoder,44,0.9424159528029896,0.9166666666666666,3.454037200019229,refit TRAIN with different seed; score same validation
+PCA Reconstruction,44,0.9999999999999998,1.0,0.014568799990229309,refit TRAIN with different seed; score same validation
+Rolling Residual,44,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+EWMA Residual,44,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Seasonal Residual,44,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Change-Point / Level Shift,44,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Robust Peer Baseline,44,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Business Rules,44,1.0,1.0,0.0,"deterministic method; seed invariant, not perturbation robustness"
+Best Ensemble,44,0.987481001000129,1.0,0.0,component seed refits; frozen calibration/weights

@@ -1,0 +1,4 @@
+cluster,total_sales,total_sales,total_quantity,total_quantity,distinct_customers,distinct_customers,simulated_actual_payout,simulated_actual_payout
+,mean,count,mean,count,mean,count,mean,count
+-1,2922754.9049295774,284,6937.524647887324,284,51.021126760563384,284,1469.7226815749095,284
+1,2195351.1785714286,28,5520.928571428572,28,54.285714285714285,28,1032.006575651902,28

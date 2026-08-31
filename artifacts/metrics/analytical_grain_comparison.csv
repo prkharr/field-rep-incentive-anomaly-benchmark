@@ -1,0 +1,4 @@
+grain,observations,median_transactions,single_transaction_pct
+representative x product_class x date,2184,72.0,0.0
+representative x product_class x country x date,3120,53.0,0.0
+representative x date,364,405.0,0.0
