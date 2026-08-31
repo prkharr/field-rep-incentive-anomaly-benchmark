@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.0.0",
+  "generated_timestamp": "2026-08-31T12:37:35.329152+00:00",
+  "source_csv_sha256": "f77609eaa7700c964eee2f87a6bb1c75ca6263099969f7bc981fe6822f104cd3",
+  "source_row_count": 167760,
+  "clean_source_row_count": 167756,
+  "modeling_row_count": 2184,
+  "source_date_range": {
+    "start": "2017-01-01",
+    "end": "2019-04-01"
+  },
+  "primary_analytical_grain": "Representative × Product Class × Month",
+  "dashboard_files_generated": [
+    "dashboard_anomaly_review.csv",
+    "dashboard_rep_summary.csv",
+    "dashboard_capacity_base.csv",
+    "dashboard_capacity_scenarios.csv",
+    "dashboard_model_summary.csv",
+    "dashboard_metadata.json"
+  ],
+  "datasets": {
+    "dashboard_anomaly_review.csv": {
+      "row_count": 2184,
+      "grain": [
+        "representative",
+        "product_class",
+        "month"
+      ],
+      "columns": [
+        {
+          "name": "observation_id",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "representative",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "manager",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "team",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "country",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "product_class",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "month",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "source_partition",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "sales",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "quantity",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "transaction_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "transaction_value",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "unique_customers",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "new_customers",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "product_breadth",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "city_coverage",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "geographic_spread",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "distributor_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "distributor_concentration",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "distributor_mix_change",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "channel_mix",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "subchannel_mix",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "simulated_target",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "simulated_expected_incentive",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "simulated_actual_payout",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "simulated_adjustment",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "simulated_payout_delta",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "simulated_attainment",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "repeat_customers",
+          "dtype": "Int64",
+          "null_count": 0
+        },
+        {
+          "name": "lost_customers",
+          "dtype": "Int64",
+          "null_count": 78
+        },
+        {
+          "name": "distributor_mix_summary",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "channel_summary",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "pca_raw_score",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "pca_score_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "pca_review_flag",
+          "dtype": "boolean",
+          "null_count": 0
+        },
+        {
+          "name": "pca_threshold_exceedance",
+          "dtype": "boolean",
+          "null_count": 0
+        },
+        {
+          "name": "pca_raw_threshold",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "ewma_score",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "robust_peer_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "kmeans_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "autoencoder_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "isolation_forest_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "temporal_review_flag",
+          "dtype": "boolean",
+          "null_count": 0
+        },
+        {
+          "name": "robust_peer_flag",
+          "dtype": "boolean",
+          "null_count": 0
+        },
+        {
+          "name": "peer_flag",
+          "dtype": "boolean",
+          "null_count": 0
+        },
+        {
+          "name": "kmeans_distance",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "kmeans_cluster",
+          "dtype": "Int64",
+          "null_count": 0
+        },
+        {
+          "name": "dbscan_cluster",
+          "dtype": "Int64",
+          "null_count": 0
+        },
+        {
+          "name": "dbscan_noise",
+          "dtype": "boolean",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_1_feature",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_1",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_1_contribution",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_2_feature",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_2",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_2_contribution",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_3_feature",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_3",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "top_driver_3_contribution",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "strongest_peer_deviation_metric",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "strongest_peer_deviation_value",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "peer_comparison_cohort",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "strongest_history_deviation_metric",
+          "dtype": "object",
+          "null_count": 234
+        },
+        {
+          "name": "strongest_history_deviation_value",
+          "dtype": "float64",
+          "null_count": 234
+        },
+        {
+          "name": "temporal_metric_feature",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "temporal_observed",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "temporal_expected",
+          "dtype": "float64",
+          "null_count": 78
+        },
+        {
+          "name": "temporal_direction",
+          "dtype": "object",
+          "null_count": 234
+        },
+        {
+          "name": "temporal_history_length",
+          "dtype": "Int64",
+          "null_count": 0
+        },
+        {
+          "name": "temporal_available",
+          "dtype": "bool",
+          "null_count": 0
+        },
+        {
+          "name": "temporal_metric",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "ewma_sales_observed",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "ewma_sales_expected",
+          "dtype": "float64",
+          "null_count": 78
+        },
+        {
+          "name": "ewma_sales_raw_score",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "ewma_sales_history_length",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "ewma_sales_available",
+          "dtype": "bool",
+          "null_count": 0
+        },
+        {
+          "name": "business_rule_flag",
+          "dtype": "boolean",
+          "null_count": 0
+        },
+        {
+          "name": "business_rule_summary",
+          "dtype": "object",
+          "null_count": 1532
+        },
+        {
+          "name": "number_of_supporting_signals",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "review_priority",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "model_agreement_summary",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "pca_rank",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "review_rank",
+          "dtype": "int64",
+          "null_count": 0
+        }
+      ]
+    },
+    "dashboard_rep_summary.csv": {
+      "row_count": 13,
+      "grain": [
+        "representative"
+      ],
+      "columns": [
+        {
+          "name": "representative",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "manager",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "team",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "primary_country",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "latest_month_available",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "total_observations",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "high_priority_review_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "medium_priority_review_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "top_5_percent_review_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "maximum_pca_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "mean_pca_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "latest_pca_percentile",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "latest_review_priority",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "strongest_recent_driver",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "temporal_flag_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "business_rule_flag_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "peer_flag_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "model_agreement_high_count",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "total_sales",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "recent_3m_sales",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "prior_3m_sales",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "sales_growth_3m",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "unique_customers_latest",
+          "dtype": "int64",
+          "null_count": 0
+        },
+        {
+          "name": "customer_change_3m",
+          "dtype": "int64",
+          "null_count": 0
+        }
+      ]
+    },
+    "dashboard_capacity_base.csv": {
+      "row_count": 48,
+      "grain": [
+        "team",
+        "country",
+        "product_class"
+      ],
+      "columns": [
+        {
+          "name": "team",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "country",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "product_class",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "forecast_horizon",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "eligible_for_capacity_recommendation",
+          "dtype": "bool",
+          "null_count": 0
+        },
+        {
+          "name": "selected_forecast_method",
+          "dtype": "object",
+          "null_count": 24
+        },
+        {
+          "name": "forecast_workload",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "forecast_error_metric_used_for_selection",
+          "dtype": "object",
+          "null_count": 24
+        },
+        {
+          "name": "sustainable_workload_per_rep",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "allocated_fte",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "required_fte",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "fte_gap",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "required_fte_lower",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "required_fte_upper",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "fte_gap_lower",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "fte_gap_upper",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "forecast_lower_scenario",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "forecast_upper_scenario",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "forecast_scenario_basis",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "workload_score_raw",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "workload_score_winsorized",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "customer_load",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "transaction_load",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "geography_load",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "product_load",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "distributor_load",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "workload_components_basis",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "last_observed_month",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "coverage_note",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "validation_wape",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "test_wape",
+          "dtype": "float64",
+          "null_count": 24
+        },
+        {
+          "name": "forecast_metric_scope",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "latest_observed_workload",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "recent_workload_growth",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "recent_workload_growth_basis",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "capacity_priority",
+          "dtype": "object",
+          "null_count": 0
+        }
+      ]
+    },
+    "dashboard_capacity_scenarios.csv": {
+      "row_count": 170,
+      "grain": [
+        "team",
+        "country",
+        "product_class",
+        "scenario_name"
+      ],
+      "columns": [
+        {
+          "name": "team",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "country",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "product_class",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "forecast_horizon",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "scenario_name",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "scenario_description",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "forecast_workload",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "allocated_fte",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "sustainable_capacity_per_rep",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "required_fte",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "fte_gap",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "capacity_priority",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "eligible_for_capacity_recommendation",
+          "dtype": "bool",
+          "null_count": 0
+        },
+        {
+          "name": "source_unit",
+          "dtype": "object",
+          "null_count": 168
+        },
+        {
+          "name": "target_unit",
+          "dtype": "object",
+          "null_count": 168
+        },
+        {
+          "name": "fte_reallocated",
+          "dtype": "float64",
+          "null_count": 168
+        },
+        {
+          "name": "reallocation_role",
+          "dtype": "object",
+          "null_count": 168
+        },
+        {
+          "name": "allocated_fte_change",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "scenario_source_name",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "scenario_source_description",
+          "dtype": "object",
+          "null_count": 0
+        }
+      ]
+    },
+    "dashboard_model_summary.csv": {
+      "row_count": 12,
+      "grain": [
+        "model"
+      ],
+      "columns": [
+        {
+          "name": "model",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "role",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "manager_facing_label",
+          "dtype": "object",
+          "null_count": 0
+        },
+        {
+          "name": "selected_for_primary_use",
+          "dtype": "bool",
+          "null_count": 0
+        },
+        {
+          "name": "recall_at_5pct",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "lift_at_5pct",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "precision_at_5pct",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "pr_auc",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "f1",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "f2",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "stability",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "runtime_seconds",
+          "dtype": "float64",
+          "null_count": 0
+        },
+        {
+          "name": "business_interpretation",
+          "dtype": "object",
+          "null_count": 0
+        }
+      ]
+    }
+  },
+  "selected_primary_anomaly_model": "PCA Reconstruction",
+  "selected_temporal_model": "EWMA Residual",
+  "selected_capacity_forecast_methodology": [
+    "exponential_smoothing"
+  ],
+  "planning_horizon": [
+    "2019-05-01"
+  ],
+  "known_poland_coverage_limitation": "Poland source coverage ends December 2018. Its May 2019 units remain ineligible; missing records are not zero demand or zero staffing.",
+  "country_date_coverage": {
+    "Germany": {
+      "start": "2017-01-01",
+      "end": "2019-04-01",
+      "rows": 127273
+    },
+    "Poland": {
+      "start": "2018-01-01",
+      "end": "2018-12-01",
+      "rows": 40483
+    }
+  },
+  "feature_count": 124,
+  "seed": 42,
+  "pipeline_version": "1.0.0",
+  "git_commit": "4f0477fcabf29b1465571318a74544d01509a57c",
+  "git_worktree_dirty": true,
+  "review_priority_policy": {
+    "very_high_percentile": 0.99,
+    "elevated_percentile": 0.95,
+    "multiple_support_count": 2
+  },
+  "percentile_scale": "0–1 throughout all five dashboard CSVs",
+  "model_labels": {
+    "PCA Reconstruction": "Pattern deviation",
+    "EWMA Residual": "Recent trend deviation",
+    "Robust Peer Baseline": "Peer deviation",
+    "Business Rules": "Business rule indicator",
+    "K-Means": "Commercial behavior segment",
+    "DBSCAN": "Local density deviation",
+    "Autoencoder": "Nonlinear pattern deviation",
+    "Isolation Forest": "Tree-based unusual pattern",
+    "Rolling Residual": "Recent historical deviation",
+    "Seasonal Residual": "Same-month historical deviation",
+    "Change-Point / Level Shift": "Sustained change indicator",
+    "Best Ensemble": "Combined comparison signal"
+  },
+  "definitions": {
+    "review_priority": "High: persisted PCA exact-5% flag, or TRAIN percentile >= very_high with >=1 support. Medium: percentile >= elevated, or >= multiple_support_count supporting families. Otherwise Low. Thresholds are presentation rules, not test-optimized.",
+    "review_rank": "Snapshot-wide PCA raw-score descending, ties observation_id ascending. Retrospective display rank; never a historical model input.",
+    "pca_review_flag": "Exact budget flag already executed within each train/validation/test partition, not a new global top-5% selection.",
+    "pca_threshold_exceedance": "Persisted boolean exceedance of the raw-score TRAIN-reference threshold.",
+    "supporting_signals": "Three supporting families: EWMA exact-budget flag, robust-peer exact-budget flag, and any executed business-rule binary flag. Count excludes PCA and correlated model comparators. Not statistical independence or certainty.",
+    "transaction_value": "Mean transaction value, copied from average_transaction_value; sales is the monthly total.",
+    "repeat_customers": "unique_customers × persisted repeat_customer_ratio, only when it identifies an integer count.",
+    "lost_customers": "Previous calendar-month same rep/class customer count × current loss rate; null without the previous month or integer-identifying arithmetic.",
+    "top_driver_contribution": "Unmodified per-feature squared reconstruction error in transformed model space, NOT a percentage. Top three exported PCA features; technical feature ids retained.",
+    "strongest_deviation": "Largest absolute signed peer robust-z or personal-history deviation; original sign retained.",
+    "temporal_context": "Strongest EWMA metric by persisted raw signal, with separate SALES-only observed/expected fields for charts; unavailable direction remains null.",
+    "channel_summary": "Persisted diversity indices only; channel/distributor names were not retained and are not invented.",
+    "latest_rep_percentile": "Maximum across product-class observations in that representative’s latest month; latest priority is the highest latest-month category.",
+    "strongest_recent_driver": "Top PCA contributor of the highest-percentile product-class row in the representative’s latest month.",
+    "model_agreement_high_count": "Representative-level count of observations with at least two of the three supporting signal families; not a count of confirmed outcomes.",
+    "recent_3m_sales": "Latest available month plus two preceding calendar months; prior_3m_sales is the preceding three. Incomplete windows remain null. Growth=(recent-prior)/abs(prior); zero prior denominator is null.",
+    "unique_customers_latest": "Direct rep-month unique count, never summed across product classes.",
+    "customer_change_3m": "Latest direct rep-month unique count minus the exact three-calendar-month-earlier count; null if either is unavailable.",
+    "primary_country": "Latest-month singleton country only; multi-country ambiguity remains null.",
+    "fte_availability": "Base case assumes 13 observed representatives are available to the observed Germany scope; missing Poland records do not verify their actual cross-country availability.",
+    "capacity_priority": "Signed modeled FTE gap with numerical tolerance, not a hiring or employment decision.",
+    "forecast_scenario_bounds": "Scenario bounds reconstructed only from persisted forecast uncertainty/capacity bounds; not confidence intervals."
+  },
+  "governance": [
+    "All incentive amounts remain simulated_ fields.",
+    "Manager observation files contain no controlled injection labels.",
+    "An unusual pattern is a review signal, not an automatic finding.",
+    "Model-summary metrics come from controlled benchmark labels and are not real-world detection accuracy.",
+    "Models are not fitted or rescored during dashboard export."
+  ]
+}

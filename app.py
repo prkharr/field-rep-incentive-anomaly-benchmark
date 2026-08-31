@@ -690,7 +690,7 @@ def render_table(frame: pd.DataFrame, height: int = 430) -> None:
     )
 
 
-if (METRICS_DIR / 'final_anomaly_model_benchmark.csv').exists():
+if (ROOT / 'data/dashboard/dashboard_metadata.json').exists() or (METRICS_DIR / 'final_anomaly_model_benchmark.csv').exists():
     workspace = st.sidebar.radio('Dataset workspace', ['Real commercial extension', 'Legacy synthetic demo'])
     if workspace == 'Real commercial extension':
         from field_rep_anomaly.extended_dashboard import render_extended

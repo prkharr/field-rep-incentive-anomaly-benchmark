@@ -118,6 +118,37 @@ The base case assumes all 13 observed reps' capacity is available to the observe
 
 [Capacity results](artifacts/planning/hiring_need_by_business_unit.csv) · [Scenarios](artifacts/planning/hiring_scenarios.csv) · [Forecast backtests](artifacts/planning/forecast_metrics.csv) · [Methodology](artifacts/reports/hiring_need_methodology.md)
 
+## Dashboard Data Layer
+
+The manager workspace now consumes **five CSVs plus metadata in `data/dashboard/`**. These are projections of the already executed clean outputs: no model fitting, rescoring, threshold tuning, or injection labels enter the export. The extended pipeline builds them automatically after its existing outputs are complete.
+
+| CSV | Grain / rows in this run | Dashboard use |
+|---|---|---|
+| `dashboard_anomaly_review.csv` | Rep × Product Class × Month / 2,184 | Investigation queue and sales EWMA history |
+| `dashboard_rep_summary.csv` | Representative / 13 | Executive cards and rep overview |
+| `dashboard_capacity_base.csv` | Team × Country × Product Class / 48 | May 2019 planning baseline; 24 Poland units explicitly ineligible |
+| `dashboard_capacity_scenarios.csv` | Business unit × existing scenario / 170 | Precomputed scenario comparison and paired reallocation |
+| `dashboard_model_summary.csv` | Model / 12 | Analytics/model comparison page |
+
+`dashboard_metadata.json` records provenance, schema, counts, model choices, calibration scale and field definitions. Percentiles are consistently **0–1**. PCA exact-budget flags are preserved within their original train/validation/test partitions; display ranks order all exported rows by raw PCA score with an observation-ID tie-break. **High** means the existing PCA review flag, or percentile ≥0.99 plus supporting evidence. **Medium** means percentile ≥0.95 or at least two supporting families; otherwise **Low**. Peer, EWMA and business-rule families supply context, not statistical independence or outcome probabilities. Presentation thresholds live under `dashboard:` in config.
+
+Customer summaries use direct rep-month unique counts, not sums across product classes. Exact three-month calendar windows require complete history. PCA driver contributions retain their original squared-error units, not invented percentage shares. Existing capacity assumptions, pooled forecast WAPE, and donor/receiver transfer amounts are preserved. See [full schemas and first-three-row previews](docs/dashboard_data_layer.md).
+
+Refresh only this data layer, without retraining or touching technical outputs:
+
+```powershell
+python -m field_rep_anomaly.dashboard_data
+python scripts/inspect_dashboard_data.py
+```
+
+For a full verification execution that leaves the original processed data, metrics, models and reports untouched:
+
+```powershell
+python run_extended_benchmark.py --input data/raw/pharma-data.csv --config configs/config.yaml --output-root work/dashboard-layer/full-run
+```
+
+The default manager pages read only `data/dashboard/`. Controlled-injection diagnostics remain available through the explicitly labelled technical benchmark workspace, outside the manager data layer.
+
 ## Dashboard
 
 The existing Streamlit application now offers a separate **Real commercial extension** workspace:

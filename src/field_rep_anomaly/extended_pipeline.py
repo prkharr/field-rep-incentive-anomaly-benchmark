@@ -517,6 +517,9 @@ def run(root, input_path, config_path):
     dump(root/'artifacts/reports/extended_run_metadata.json',audit)
     write_reports(root,audit,choice,comparison,planning,forecast_metrics)
     print(json.dumps({'runtime_seconds':audit['runtime_seconds'],'selected':selected,'test_rows':int(test.sum()),'planning_units':len(planning)}),flush=True)
+    from .dashboard_data import build_all_dashboard_datasets
+    dashboard_settings=yaml.safe_load(config_path.read_text(encoding='utf-8')).get('dashboard',{})
+    build_all_dashboard_datasets(root,settings=dashboard_settings)
     return audit
 
 
@@ -663,8 +666,9 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input',default='data/raw/pharma-data.csv')
     parser.add_argument('--config',default='configs/config.yaml')
+    parser.add_argument('--output-root',type=Path,help='Optional isolated output directory; leave existing executed artifacts untouched during verification.')
     args=parser.parse_args()
-    root=Path(__file__).resolve().parents[2]
+    root=args.output_root.resolve() if args.output_root else Path(__file__).resolve().parents[2]
     # Avoid BLAS oversubscription; reproducible and bounded on a small population.
     with threadpool_limits(limits=1):
         run(root,Path(args.input).resolve(),Path(args.config).resolve())
