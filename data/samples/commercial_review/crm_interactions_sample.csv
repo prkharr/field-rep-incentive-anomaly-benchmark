@@ -1,0 +1,26 @@
+interaction_id,visit_id,rep_id,customer_id,period,interaction_datetime,interaction_type,product_focus,interaction_outcome,follow_up_required_flag,next_action_date,sentiment_or_interest_score,data_lineage
+CRM_000000001,VIS_000000001,REP_0dfc420450a6,CUST_058f1996d0c0,2017-01-01,2017-01-01 07:56:00,physical visit,Apromin,product interest,False,2017-01-07,0.5338359294683677,synthetic_normal
+CRM_000000002,VIS_000000002,REP_0dfc420450a6,CUST_0ba004721749,2017-01-01,2017-01-01 10:33:00,physical visit,Benzoprox,product interest,False,2017-01-20,0.8301195669605266,synthetic_normal
+CRM_000000003,VIS_000000003,REP_0dfc420450a6,CUST_0cdde469a1d4,2017-01-01,2017-01-01 12:58:00,physical visit,Zynosine,follow-up requested,True,2017-01-14,0.5286064576715418,synthetic_normal
+CRM_000000004,VIS_000000004,REP_0dfc420450a6,CUST_0f8a0a2dcd51,2017-01-01,2017-01-01 15:34:00,physical visit,Megenorphine,routine coverage,False,2017-01-11,0.6928160708094819,synthetic_normal
+CRM_000000005,VIS_000000005,REP_0dfc420450a6,CUST_128b276cb4fe,2017-01-01,2017-01-02 07:58:00,physical visit,Alimmethate Insudase,product interest,False,2017-01-06,0.825149933850813,synthetic_normal
+CRM_000000006,VIS_000000006,REP_0dfc420450a6,CUST_13714163b271,2017-01-01,2017-01-02 10:27:00,physical visit,Araxetine,product interest,False,2017-01-23,0.48128707653426317,synthetic_normal
+CRM_000000007,VIS_000000007,REP_0dfc420450a6,CUST_149cb2668c08,2017-01-01,2017-01-02 13:01:00,physical visit,Alimmethate Insudase,follow-up requested,True,2017-01-20,0.2785140352762344,synthetic_normal
+CRM_000000008,VIS_000000008,REP_0dfc420450a6,CUST_1c086429a684,2017-01-01,2017-01-02 15:36:00,physical visit,Lovapur,no immediate action,False,2017-01-10,0.6292351065385734,synthetic_normal
+CRM_000000009,VIS_000000009,REP_0dfc420450a6,CUST_1d258a36d610,2017-01-01,2017-01-03 08:04:00,physical visit,Stelazolid,product interest,False,2017-01-23,0.6670973861282095,synthetic_normal
+CRM_000000010,VIS_000000010,REP_0dfc420450a6,CUST_211a2d5b8372,2017-01-01,2017-01-03 10:33:00,physical visit,Diazemid Felcept,follow-up requested,True,2017-01-18,0.8374118750648107,synthetic_normal
+CRM_000000011,VIS_000000011,REP_0dfc420450a6,CUST_2150825f0243,2017-01-01,2017-01-03 12:59:00,physical visit,Effidomide Evofribrate,no immediate action,False,2017-01-19,0.6368597889820402,synthetic_normal
+CRM_000000012,VIS_000000012,REP_0dfc420450a6,CUST_23ddcd3bfd76,2017-01-01,2017-01-03 15:39:00,physical visit,Pentastrin,follow-up requested,True,2017-01-12,0.6546677874082352,synthetic_normal
+CRM_000000013,VIS_000000013,REP_0dfc420450a6,CUST_253cc1a0a403,2017-01-01,2017-01-04 07:58:00,physical visit,Abatatriptan,product interest,False,2017-01-07,0.6590207527310589,synthetic_normal
+CRM_000000014,VIS_000000014,REP_0dfc420450a6,CUST_275360e832a3,2017-01-01,2017-01-04 10:27:00,physical visit,Belavarix Benzabicin,follow-up requested,True,2017-01-11,0.7413882342370728,synthetic_normal
+CRM_000000015,VIS_000000015,REP_0dfc420450a6,CUST_279b9db55a14,2017-01-01,2017-01-04 13:04:00,physical visit,Amlominphen Dexanovate,follow-up requested,True,2017-01-20,0.5964026353513519,synthetic_normal
+CRM_000000016,VIS_000000016,REP_0dfc420450a6,CUST_2919d7a5cf18,2017-01-01,2017-01-04 15:40:00,physical visit,Cortirodine Alimcline,routine coverage,False,2017-01-25,0.5022368307881034,synthetic_normal
+CRM_000000017,VIS_000000017,REP_0dfc420450a6,CUST_29734987a1e7,2017-01-01,2017-01-05 08:07:00,physical visit,Quiniprosyn,routine coverage,False,2017-01-26,0.6400231090517986,synthetic_normal
+CRM_000000018,VIS_000000018,REP_0dfc420450a6,CUST_318437b1f3ae,2017-01-01,2017-01-05 10:33:00,physical visit,Lovavatol Azelavarix,no immediate action,False,2017-01-13,0.9103543015172715,synthetic_normal
+CRM_000000019,VIS_000000019,REP_0dfc420450a6,CUST_3230d85f9fa2,2017-01-01,2017-01-05 13:09:00,physical visit,Adriafinil Ehtymara,routine coverage,False,2017-01-16,0.7925237953424895,synthetic_normal
+CRM_000000020,VIS_000000020,REP_0dfc420450a6,CUST_374e0414345a,2017-01-01,2017-01-05 15:34:00,physical visit,Abobozolid,no immediate action,False,2017-01-20,0.6450828623388516,synthetic_normal
+CRM_000000021,VIS_000000021,REP_0dfc420450a6,CUST_3ca43c71422e,2017-01-01,2017-01-06 08:02:00,physical visit,Symdocet,follow-up requested,True,2017-01-22,0.49510639214452684,synthetic_normal
+CRM_000000022,VIS_000000022,REP_0dfc420450a6,CUST_3cbbbdd3f295,2017-01-01,2017-01-06 10:29:00,physical visit,Aquamycin Lacoran,product interest,False,2017-01-26,0.8759962831926797,synthetic_normal
+CRM_000000023,VIS_000000023,REP_0dfc420450a6,CUST_3d5a6a81cd0e,2017-01-01,2017-01-06 12:56:00,physical visit,Alemtuvatol Megalinum,routine coverage,False,2017-01-20,0.45088142797883246,synthetic_normal
+CRM_000000024,VIS_000000024,REP_0dfc420450a6,CUST_3dbbf1d8166a,2017-01-01,2017-01-06 15:31:00,physical visit,Afinitasol,follow-up requested,True,2017-01-13,0.6684464595558269,synthetic_normal
+CRM_000000025,VIS_000000025,REP_0dfc420450a6,CUST_448dbc87503b,2017-01-01,2017-01-07 08:02:00,physical visit,Acantaine,product interest,False,2017-01-11,0.4177690365924078,synthetic_normal

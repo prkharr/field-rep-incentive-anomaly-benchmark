@@ -1,0 +1,26 @@
+discount_id,order_line_id,rep_id,discount_pct,discount_amount,discount_reason,approval_required_flag,approved_flag,approver_id,approval_date,exception_flag,currency_code,data_lineage
+DISC_000000001,LINE_83a71e485a5e6097,REP_6003efb01f5e,0.11018149485568685,1729.8494692342836,customer segment pricing,False,True,,2017-01-21,False,UNK,synthetic_normal
+DISC_000000002,LINE_c02ff43fbd70acac,REP_82f7cb811b80,0.08975089341586996,406.5715471738909,customer segment pricing,False,True,,2017-01-18,False,UNK,synthetic_normal
+DISC_000000003,LINE_2c1c06800e948b6a,REP_2234ec3bee93,0.1400299412926591,2429.5194814276356,customer segment pricing,False,True,,2017-01-08,False,UNK,synthetic_normal
+DISC_000000004,LINE_31d7edff72769d59,REP_200ef690040c,0.07160147301530748,143.91896076076802,standard commercial discount,False,True,,2017-01-09,False,UNK,synthetic_normal
+DISC_000000005,LINE_47562d584ebb1f88,REP_200ef690040c,0.1336323299381522,171.0493823208348,customer segment pricing,False,True,,2017-01-05,False,UNK,synthetic_normal
+DISC_000000006,LINE_34c769ed3e5a0ce1,REP_56269a9759c4,0.09402929254044526,521.8625735994711,customer segment pricing,False,True,,2017-01-10,False,UNK,synthetic_normal
+DISC_000000007,LINE_cc7f655a1cbd69e6,REP_bba68d031906,0.09147810754840831,33.846899792911074,customer segment pricing,False,True,,2017-01-18,False,UNK,synthetic_normal
+DISC_000000008,LINE_ce13a8bd69e6f9a1,REP_bba68d031906,0.05274465714547709,492.8988210244834,standard commercial discount,False,True,,2017-01-05,False,UNK,synthetic_normal
+DISC_000000009,LINE_afb79ab354a05cc1,REP_200ef690040c,0.1107516193294122,50.8349932722002,customer segment pricing,False,True,,2017-01-09,False,UNK,synthetic_normal
+DISC_000000010,LINE_6a1ca46833062a6c,REP_200ef690040c,0.08014184873597002,25.645391595510407,customer segment pricing,False,True,,2017-01-14,False,UNK,synthetic_normal
+DISC_000000011,LINE_a48e18b0fadd187a,REP_bba68d031906,0.06356862013990143,66.17493356563739,standard commercial discount,False,True,,2017-01-20,False,UNK,synthetic_normal
+DISC_000000012,LINE_41430d77a03b561f,REP_db1cc40d477a,0.12543014254287582,513.0092830003621,customer segment pricing,False,True,,2017-01-17,False,UNK,synthetic_normal
+DISC_000000013,LINE_d9e49141ab40d81a,REP_0dfc420450a6,0.0855143692739371,95.77609358680955,customer segment pricing,False,True,,2017-01-08,False,UNK,synthetic_normal
+DISC_000000014,LINE_f29b8f5e294d3ed2,REP_d21d2dd167c5,0.12995935499514533,744.1472667022022,customer segment pricing,False,True,,2017-01-21,False,UNK,synthetic_normal
+DISC_000000015,LINE_4f03ca3270f62364,REP_200ef690040c,0.10233510962814216,1794.1391420005882,customer segment pricing,False,True,,2017-01-16,False,UNK,synthetic_normal
+DISC_000000016,LINE_5a8a316943de44f4,REP_db1cc40d477a,0.10011040836590457,186.70591160241202,customer segment pricing,False,True,,2017-01-22,False,UNK,synthetic_normal
+DISC_000000017,LINE_69ed3495d94bec57,REP_82f7cb811b80,0.03727490031831705,42.12063735969827,standard commercial discount,False,True,,2017-01-13,False,UNK,synthetic_normal
+DISC_000000018,LINE_cfc875eb616aed7e,REP_6daf09991b71,0.1520437632821576,284.3218373376347,volume or contract exception,True,True,MGR_4b97498897f6,2017-01-18,True,UNK,synthetic_normal
+DISC_000000019,LINE_83a9c17206a0a4bf,REP_6003efb01f5e,0.15115646326086202,259.23333449237833,volume or contract exception,True,False,MGR_31981a685b7e,2017-01-12,True,UNK,synthetic_normal
+DISC_000000020,LINE_a79808d8e6d6d13e,REP_bba68d031906,0.11756330886800109,313.8940346775629,customer segment pricing,False,True,,2016-12-30,False,UNK,synthetic_normal
+DISC_000000021,LINE_e3e3215806cf5c2b,REP_6daf09991b71,0.12805209618776975,599.2838101587624,customer segment pricing,False,True,,2017-01-24,False,UNK,synthetic_normal
+DISC_000000022,LINE_76fec755ca1fcb62,REP_bba68d031906,0.11513328665953573,397.20983897539827,customer segment pricing,False,True,,2017-01-16,False,UNK,synthetic_normal
+DISC_000000023,LINE_95590ecf46c91f04,REP_2234ec3bee93,0.07593628563743851,148.4554384211923,standard commercial discount,False,True,,2017-01-17,False,UNK,synthetic_normal
+DISC_000000024,LINE_77072ab9f0b915a7,REP_0dfc420450a6,0.05801128245058565,156.0503497920754,standard commercial discount,False,True,,2017-01-23,False,UNK,synthetic_normal
+DISC_000000025,LINE_7215aa25441421c4,REP_6daf09991b71,0.11789332881428013,108.46186250913773,customer segment pricing,False,True,,2017-01-21,False,UNK,synthetic_normal

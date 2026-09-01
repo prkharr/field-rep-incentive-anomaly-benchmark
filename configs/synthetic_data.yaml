@@ -1,0 +1,119 @@
+project:
+  name: Pharma Commercial Review Controlled Benchmark
+  version: "2.0.0"
+  seed: 42
+  currency_code: UNK
+  source_input: data/raw/pharma-data.csv
+
+paths:
+  generated_dir: data/generated
+  dashboard_dir: data/dashboard
+  artifact_dir: artifacts/commercial_review
+  report_dir: reports
+
+source:
+  preserve_exact_duplicates_in_profile: true
+  exclude_exact_duplicates_from_modeling: true
+  exclude_incomplete_required_rows: true
+  generated_transaction_day_min: 1
+  generated_transaction_day_max: 27
+
+synthetic:
+  visit_sampling_rate:
+    low: 0.10
+    medium: 0.20
+    high: 0.34
+  visit_completion_rate: 0.93
+  crm_supplement_rate: 0.35
+  base_return_rate: 0.025
+  base_cancellation_rate: 0.008
+  discount_noise_sd: 0.012
+  target_random_variation: 0.055
+  cold_start_target_sales: 16500000.0
+  cold_start_target_units: 45000.0
+  cold_start_priority_product_mix: 0.25
+  expense_rate_per_km: 0.62
+  average_speed_kmh: 42.0
+  average_visit_minutes: 42
+  max_normal_visits_per_rep_period: 84
+  policy_versions:
+    - policy_id: POL_STANDARD
+      policy_version: "2017.1"
+      effective_start_date: "2017-01-01"
+      effective_end_date: "2017-12-31"
+      payout_delay_days: 15
+      base_rate: 0.0045
+      maximum_payout: 25000
+    - policy_id: POL_STANDARD
+      policy_version: "2018.1"
+      effective_start_date: "2018-01-01"
+      effective_end_date: "2018-12-31"
+      payout_delay_days: 15
+      base_rate: 0.0050
+      maximum_payout: 27500
+    - policy_id: POL_STANDARD
+      policy_version: "2019.1"
+      effective_start_date: "2019-01-01"
+      effective_end_date: "2019-12-31"
+      payout_delay_days: 18
+      base_rate: 0.0052
+      maximum_payout: 30000
+  attainment_tiers:
+    - lower: 0.0
+      upper: 0.8
+      accelerator: 1.0
+      decelerator: 0.55
+    - lower: 0.8
+      upper: 1.0
+      accelerator: 1.0
+      decelerator: 0.85
+    - lower: 1.0
+      upper: 1.2
+      accelerator: 1.35
+      decelerator: 1.0
+    - lower: 1.2
+      upper: 10.0
+      accelerator: 1.75
+      decelerator: 1.0
+
+anomalies:
+  rep_period_prevalence: 0.05
+  order_level_prevalence: 0.015
+  capacity_overload_prevalence: 0.11
+  correlated_case_share: 0.20
+  severity_mix:
+    low: 0.30
+    medium: 0.45
+    high: 0.25
+
+model:
+  finalized_model: PCA Reconstruction
+  pca_retained_variance: 0.95
+  train_end: "2018-06-01"
+  validation_end: "2018-12-01"
+  manager_review_fraction: 0.05
+  signed_log1p: true
+  scaler: robust
+
+capacity:
+  stable_growth_limit: 0.50
+  sustainable_capacity_quantile: 0.60
+  workload_weights:
+    distinct_customers: 0.40
+    transaction_count: 0.25
+    distinct_cities: 0.15
+    distinct_products: 0.10
+    distributor_count: 0.10
+  visit_hours_per_required_call: 0.70
+  administrative_buffer_pct: 0.08
+  risk_thresholds:
+    medium: 0.85
+    high: 1.00
+    critical: 1.20
+
+output:
+  write_parquet: true
+  write_csv_gz: false
+  dashboard_csv: true
+  write_small_samples: true
+  sample_rows: 25

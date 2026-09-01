@@ -15,6 +15,35 @@ The user-provided `pharma-data.csv` contains 167,760 rows and 18 columns: 13 act
 
 The primary grain is **Rep × Product Class × Month**: 2,184 observations, median 72 transactions per observation, and no single-transaction cells. The country-specific candidate has 3,120 observations (median 53 transactions); rep-month has 364. The primary grain retains product-class interpretation while limiting dimensions for only 13 reps. Market and planning views retain country so reviewers can inspect the coverage break.
 
+## Relational incentive, activity and capacity benchmark (v2)
+
+The additive v2 workflow extends the executed benchmark with a rep-month manager review layer. It preserves the existing extended command, PCA-finalization evidence, legacy dashboard files and capacity comparator while adding relational masters/facts, a centralized versioned policy engine, 22 controlled scenarios, an hours-based capacity calendar, a leakage-safe feature store and twelve new dashboard CSVs.
+
+Observed source sales and identities remain unchanged. Every new quota, incentive, discount, return simulation, visit, CRM interaction, expense, coordinate, capacity input and controlled label is explicitly marked `synthetic_derived`, `synthetic_normal` or `synthetic_injected`. The source has no reliable currency, so generated monetary tables use `currency_code=UNK`; no conversion is attempted. Full-resolution Parquet is reproducible and git-ignored, while compact samples, dashboard outputs, code, configuration and executed reports are retained.
+
+Generated relational datasets are `rep_master`, `manager_master`, `team_master`, `customer_master`, `product_master`, `territory_master`, `rep_targets_quotas`, `incentive_policy_rules`, `orders`, `discount_detail`, `returns_cancellations`, `field_visits`, `crm_interactions`, `travel_expenses`, `incentive_calculations`, `capacity_calendar`, `capacity_customer_drilldown`, `capacity_territory_allocation`, and `capacity_territory_summary`. Both clean and anomaly-injected layers are persisted separately; `anomaly_ground_truth` remains benchmark-only.
+
+The 22 controlled scenarios are: peer incentive outlier; incorrect accelerator tier; duplicate incentive adjustment; unsupported manual override; end-of-period sales spike; post-payout returns; threshold-crossing discount; historically low-volume customer spike; customer concentration; incentivized-product mix shift; extremely short visits; overlapping/impossible travel; sales without supporting activity; high activity with low engagement; inflated travel distance; duplicate expense claim; unusual returns/cancellations; late repeated target revision; territory workload above capacity; persistent priority-customer undercoverage; territory-potential-explained performance; and a correlated sales/discount/return case. Severity and prevalence are configured in `configs/synthetic_data.yaml`.
+
+The rep-month feature store covers sales, incentives/quotas, customers, products, orders/timing, discounts, returns, visits/CRM, travel/expenses, prior-only history, commercially matched peers, territory adjustments, and capacity. Behavior-derived potential and price context are rebuilt as of each period; only the explicitly named `post_incentive_return_rate` maps a later event back to its payout period for post-period review. The compact capacity calendar remains one row per rep-month and reports a dominant territory for display. `capacity_territory_allocation` attributes visit/travel workload to the actual synthetic visit territory and uncovered cadence workload to the owned-customer territory, then proportionally allocates shared roster availability while conserving every additive quantity back to the rep-month calendar. `capacity_territory_summary` provides territory-month planning totals with utilization and risk recomputed from those attributed numerators and denominators. Calendar-only injected workload residuals are explicitly marked and assigned to the dominant territory. Because controlled overload truth is injected at rep-month rather than territory-month grain, the territory diagnostic is labeled allocation sensitivity and is not reported as independent territory-ranking agreement.
+
+The twelve required manager/benchmark CSVs are `dashboard_kpi_summary.csv`, `dashboard_manager_review_queue.csv`, `dashboard_rep_period_summary.csv`, `dashboard_anomaly_evidence.csv`, `dashboard_feature_contributions.csv`, `dashboard_peer_comparison.csv`, `dashboard_capacity_summary.csv`, `dashboard_capacity_customer_drilldown.csv`, `dashboard_model_metrics.csv`, `dashboard_anomaly_type_metrics.csv`, `dashboard_data_quality.csv`, and `dashboard_run_manifest.csv`. Optional compact curve, PCA-variance, confusion-matrix, score-distribution, and period-stability CSVs support the benchmark page.
+
+Run the complete workflow from the repository root:
+
+```powershell
+python -m field_rep_anomaly.commercial_review.pipeline --config configs/synthetic_data.yaml --input data/raw/pharma-data.csv
+streamlit run app.py
+```
+
+In the app, choose **Incentive & capacity controlled benchmark**. Its pages are Executive Overview, Manager Review Queue, Rep Anomaly Drill-down, Team and Manager View, Capacity Overview, Model Benchmark View, and Data and Model Health. The original real-commercial and legacy workspaces remain available.
+
+The v2 finalized anomaly model remains standalone **PCA Reconstruction**, fitted on clean chronological history; the manager threshold is fixed from the unlabeled validation review budget. K-Means remains segmentation and other existing detectors remain comparisons. The hours capacity layer retains the existing normalized customer/transaction/city/product/distributor workload index as an audit field, then adds available hours, required coverage/visit/travel hours, utilization, required/available FTE and coverage gaps.
+
+See [synthetic methodology](docs/synthetic_data_methodology.md), [model card](docs/model_card.md), the executed [final benchmark report](reports/final_benchmark_report.md), generated [field-level dictionary](docs/commercial_review_data_dictionary.md), and consolidated [run manifest](artifacts/commercial_review/run_manifest.json).
+
+Responsible use is mandatory: this benchmark does not prove fraud; injected labels are controlled synthetic labels; incentive results require human review; capacity results should support rather than automate hiring or employment decisions; and outputs must not support punitive employee action without further investigation.
+
 ## Three-layer architecture
 
 - **Commercial behavior:** real identities, transaction aggregation, customer coverage, product/distributor/channel mix, geography, peers and prior-only history.

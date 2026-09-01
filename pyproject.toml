@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "field-rep-incentive-anomaly-benchmark"
-version = "1.0.0"
+version = "2.0.0"
 description = "Reproducible K-Means and DBSCAN benchmark for field-representative incentive anomaly review."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -17,6 +17,7 @@ dependencies = [
   "seaborn>=0.13,<1",
   "PyYAML>=6,<7",
   "joblib>=1.3,<2",
+  "pyarrow>=14,<26",
 ]
 
 [project.optional-dependencies]
@@ -25,6 +26,7 @@ dev = ["pytest>=8,<9", "nbformat>=5.9,<6"]
 
 [project.scripts]
 field-rep-benchmark = "field_rep_anomaly.pipeline:main"
+commercial-review-benchmark = "field_rep_anomaly.commercial_review.pipeline:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

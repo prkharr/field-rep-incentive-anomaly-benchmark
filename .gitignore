@@ -18,3 +18,7 @@ dist/
 
 # User-provided source data is local only (redistribution license not verified).
 data/raw/*.csv
+
+# Full-resolution generated relational facts are reproducible and can exceed
+# normal GitHub review sizes. Commit generators, compact samples and dashboard CSVs.
+data/generated/

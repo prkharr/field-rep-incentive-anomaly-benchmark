@@ -6,6 +6,7 @@ matplotlib==3.10.9
 seaborn==0.13.2
 PyYAML==6.0.3
 joblib==1.5.3
+pyarrow==25.0.1
 streamlit==1.49.1
 plotly==6.9.0
 pytest==8.4.2

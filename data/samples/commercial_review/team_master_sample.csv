@@ -1,0 +1,5 @@
+team_id,team_name,manager_id,region,active_rep_count,management_span,attribute_reference_end_date,data_lineage
+TEAM_4f4a9410ffcd,Delta,MGR_31981a685b7e,Germany|Poland,4,4,2018-06-01,synthetic_derived
+TEAM_a405eba78bf2,Alfa,MGR_5e1c70ff0ce6,Germany|Poland,3,3,2018-06-01,synthetic_derived
+TEAM_b9dd960c1753,Charlie,MGR_4b97498897f6,Germany|Poland,3,3,2018-06-01,synthetic_derived
+TEAM_f144a6907dc4,Bravo,MGR_eb86f856200b,Germany|Poland,3,3,2018-06-01,synthetic_derived

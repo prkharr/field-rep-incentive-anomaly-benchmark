@@ -676,7 +676,7 @@ def investigation_table(frame: pd.DataFrame) -> pd.DataFrame:
 def render_table(frame: pd.DataFrame, height: int = 430) -> None:
     st.dataframe(
         frame,
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
         height=height,
         column_config={
@@ -690,11 +690,21 @@ def render_table(frame: pd.DataFrame, height: int = 430) -> None:
     )
 
 
-if (ROOT / 'data/dashboard/dashboard_metadata.json').exists() or (METRICS_DIR / 'final_anomaly_model_benchmark.csv').exists():
-    workspace = st.sidebar.radio('Dataset workspace', ['Real commercial extension', 'Legacy synthetic demo'])
+if ((ROOT / 'data/dashboard/dashboard_metadata.json').exists()
+        or (ROOT / 'data/dashboard/dashboard_kpi_summary.csv').exists()
+        or (METRICS_DIR / 'final_anomaly_model_benchmark.csv').exists()):
+    workspace_options = ['Real commercial extension']
+    if (ROOT / 'data/dashboard/dashboard_kpi_summary.csv').exists():
+        workspace_options.append('Incentive & capacity controlled benchmark')
+    workspace_options.append('Legacy synthetic demo')
+    workspace = st.sidebar.radio('Dataset workspace', workspace_options)
     if workspace == 'Real commercial extension':
         from field_rep_anomaly.extended_dashboard import render_extended
         render_extended(ROOT, render_table, section)
+        st.stop()
+    if workspace == 'Incentive & capacity controlled benchmark':
+        from field_rep_anomaly.commercial_review.dashboard import render_commercial_review
+        render_commercial_review(ROOT, render_table, section)
         st.stop()
     st.warning('Legacy synthetic demonstration: its numbers are NOT comparable with the real-data extension.')
 
@@ -788,7 +798,7 @@ else:
 st.sidebar.caption(f"{artifact_count}/6 core artifact groups present")
 st.sidebar.caption(f"Flag basis: {flag_basis}")
 
-if st.sidebar.button("Refresh artifacts", use_container_width=True):
+if st.sidebar.button("Refresh artifacts", width="stretch"):
     st.cache_data.clear()
     st.rerun()
 
@@ -893,7 +903,7 @@ def executive_overview() -> None:
                 labels={"__score": "Anomaly score", "count": "Observations"},
             )
             figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), legend_title_text="")
-            st.plotly_chart(figure, use_container_width=True)
+            st.plotly_chart(figure, width="stretch")
         else:
             st.info("No continuous anomaly score is present in the scored artifact.")
 
@@ -919,7 +929,7 @@ def executive_overview() -> None:
         )
         figure.update_traces(textposition="outside", textinfo="percent+label")
         figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), showlegend=False)
-        st.plotly_chart(figure, use_container_width=True)
+        st.plotly_chart(figure, width="stretch")
 
     section(
         "Commercial relationship and priority queue",
@@ -947,7 +957,7 @@ def executive_overview() -> None:
                 opacity=0.68,
             )
             figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), legend_title_text="")
-            st.plotly_chart(figure, use_container_width=True)
+            st.plotly_chart(figure, width="stretch")
         else:
             st.info("Sales and incentive fields are needed for the commercial relationship view.")
     with queue_col:
@@ -1052,7 +1062,7 @@ def geographic_view() -> None:
                 height=510,
             )
             figure.update_layout(mapbox_style="open-street-map", margin=dict(l=0, r=0, t=0, b=0))
-            st.plotly_chart(figure, use_container_width=True)
+            st.plotly_chart(figure, width="stretch")
         else:
             st.info("Latitude and longitude are unavailable; use the ranked geographic view to compare locations.")
     with rank_col:
@@ -1072,7 +1082,7 @@ def geographic_view() -> None:
             text_auto=".1%",
         )
         figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), coloraxis_showscale=False, height=510)
-        st.plotly_chart(figure, use_container_width=True)
+        st.plotly_chart(figure, width="stretch")
 
     section(
         "Geographic review table",
@@ -1173,7 +1183,7 @@ def product_view() -> None:
             hover_data={"Incentive": ":,.0f", "Target Attainment": ":.1f", "Flagged": ":,.0f"},
         )
         figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), height=500)
-        st.plotly_chart(figure, use_container_width=True)
+        st.plotly_chart(figure, width="stretch")
     with relationship_col:
         section(
             "Sales versus incentive",
@@ -1195,7 +1205,7 @@ def product_view() -> None:
                 height=500,
             )
             figure.update_layout(margin=dict(l=5, r=5, t=10, b=5))
-            st.plotly_chart(figure, use_container_width=True)
+            st.plotly_chart(figure, width="stretch")
         else:
             st.info("Sales and incentive fields are required for this relationship view.")
 
@@ -1274,7 +1284,7 @@ def model_benchmark_view() -> None:
         )
         figure.update_yaxes(tickformat=".0%", range=[0, min(1.05, max(chart_data["Value"].max() * 1.18, 0.25))])
         figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), legend_title_text="")
-        st.plotly_chart(figure, use_container_width=True)
+        st.plotly_chart(figure, width="stretch")
 
     if not benchmark.empty:
         section(
@@ -1440,7 +1450,7 @@ def cluster_explorer() -> None:
                     )
                 )
                 figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), height=max(330, 52 * len(labels)))
-                st.plotly_chart(figure, use_container_width=True)
+                st.plotly_chart(figure, width="stretch")
             else:
                 saved_heatmap = plot_path("cluster", "profile", "heatmap")
                 if saved_heatmap:
@@ -1500,7 +1510,7 @@ def cluster_explorer() -> None:
                 labels={pca_one: "PCA component 1", pca_two: "PCA component 2", "__score": "Anomaly score"},
             )
             figure.update_layout(margin=dict(l=5, r=5, t=10, b=5), legend_title_text="Cluster")
-            st.plotly_chart(figure, use_container_width=True)
+            st.plotly_chart(figure, width="stretch")
     elif pca_plot:
         st.image(str(pca_plot), use_column_width=True)
     else:
@@ -1579,7 +1589,7 @@ def anomaly_investigation() -> None:
             data=output.to_csv(index=False).encode("utf-8"),
             file_name=f"anomaly_review_queue_{token(selected_model)}.csv",
             mime="text/csv",
-            use_container_width=True,
+            width="stretch",
             disabled=output.empty,
         )
     with note_col:

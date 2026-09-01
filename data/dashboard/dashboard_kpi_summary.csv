@@ -1,0 +1,2 @@
+total_gross_sales,total_net_sales,total_incentive_paid,review_candidate_count,high_priority_review_candidate_count,review_rate,overloaded_representative_count,overloaded_territory_count,total_positive_fte_gap,selected_threshold,test_precision_at_selected_threshold,test_recall_at_selected_threshold,benchmark_mode_label_disclosure,currency_code
+7118423199.039269,6351021499.131215,8359009.7,19,2,0.0521978021978022,9,8,4.531067912020445,169.75496134126422,0.1,0.05555555555555555,Injected labels are controlled synthetic labels and never prove fraud.,UNK
